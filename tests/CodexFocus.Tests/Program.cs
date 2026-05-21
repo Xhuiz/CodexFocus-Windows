@@ -2,6 +2,10 @@ using CodexFocus.Tests;
 
 var tests = new (string Name, Action Body)[]
 {
+    ("Transcript parser keeps only Codex Desktop sessions", TranscriptReaderTests.KeepsOnlyCodexDesktopSessions),
+    ("Transcript parser reads latest task event", TranscriptReaderTests.ReadsLatestTaskEvent),
+    ("Transcript parser detects pending approval", TranscriptReaderTests.DetectsPendingApproval),
+    ("Transcript parser ignores completed approval", TranscriptReaderTests.IgnoresCompletedApproval),
 };
 
 var failed = 0;
