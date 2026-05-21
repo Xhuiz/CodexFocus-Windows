@@ -1,1 +1,7 @@
-.superpowers/
+.worktrees/
+.tools/
+bin/
+obj/
+TestResults/
+*.user
+*.suo
