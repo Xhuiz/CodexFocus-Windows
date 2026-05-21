@@ -6,6 +6,10 @@ var tests = new (string Name, Action Body)[]
     ("Transcript parser reads latest task event", TranscriptReaderTests.ReadsLatestTaskEvent),
     ("Transcript parser detects pending approval", TranscriptReaderTests.DetectsPendingApproval),
     ("Transcript parser ignores completed approval", TranscriptReaderTests.IgnoresCompletedApproval),
+    ("Monitor baselines existing latest event on start", CodexActivityMonitorTests.BaselinesExistingLatestEventOnStart),
+    ("Monitor resumes Douyin on new task", CodexActivityMonitorTests.ResumesDouyinOnNewTask),
+    ("Monitor pauses and returns on task completion", CodexActivityMonitorTests.PausesAndReturnsOnTaskCompletion),
+    ("Monitor pauses once for approval and resumes after output", CodexActivityMonitorTests.PausesOnceForApprovalAndResumesAfterOutput),
 };
 
 var failed = 0;

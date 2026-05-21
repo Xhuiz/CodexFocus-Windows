@@ -1,9 +1,10 @@
 using System.Text;
 using System.Text.Json;
+using CodexFocus.Core.Monitoring;
 
 namespace CodexFocus.Core.Transcript;
 
-public sealed class CodexTranscriptReader
+public sealed class CodexTranscriptReader : ICodexTranscriptSource
 {
     private static readonly TimeSpan RecentWindow = TimeSpan.FromHours(24);
     private readonly string sessionsRoot;
