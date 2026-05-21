@@ -10,6 +10,8 @@ var tests = new (string Name, Action Body)[]
     ("Monitor resumes Douyin on new task", CodexActivityMonitorTests.ResumesDouyinOnNewTask),
     ("Monitor pauses and returns on task completion", CodexActivityMonitorTests.PausesAndReturnsOnTaskCompletion),
     ("Monitor pauses once for approval and resumes after output", CodexActivityMonitorTests.PausesOnceForApprovalAndResumesAfterOutput),
+    ("Settings defaults match design", AppSettingsTests.DefaultsMatchDesign),
+    ("Settings clamps invalid poll interval", AppSettingsTests.ClampsInvalidPollInterval),
 };
 
 var failed = 0;
