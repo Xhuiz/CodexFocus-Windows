@@ -6,6 +6,7 @@ var tests = new (string Name, Action Body)[]
     ("Transcript parser reads latest task event", TranscriptReaderTests.ReadsLatestTaskEvent),
     ("Transcript parser detects pending approval", TranscriptReaderTests.DetectsPendingApproval),
     ("Transcript parser ignores completed approval", TranscriptReaderTests.IgnoresCompletedApproval),
+    ("Transcript parser reads active session file", TranscriptReaderTests.ReadsActiveSessionFile),
     ("Monitor baselines existing latest event on start", CodexActivityMonitorTests.BaselinesExistingLatestEventOnStart),
     ("Monitor resumes Douyin on new task", CodexActivityMonitorTests.ResumesDouyinOnNewTask),
     ("Monitor pauses and returns on task completion", CodexActivityMonitorTests.PausesAndReturnsOnTaskCompletion),

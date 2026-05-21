@@ -40,7 +40,7 @@ public sealed class CodexTranscriptReader : ICodexTranscriptSource
 
         var approvalCalls = new List<CodexApprovalEvent>();
         var finishedCallIds = new HashSet<string>(StringComparer.Ordinal);
-        var lines = File.ReadLines(startEvent.Path).ToArray();
+        var lines = ReadAllLinesShared(startEvent.Path).ToArray();
 
         for (var i = 0; i < lines.Length; i++)
         {
@@ -115,7 +115,7 @@ public sealed class CodexTranscriptReader : ICodexTranscriptSource
 
     private static bool IsCodexDesktopSession(string path)
     {
-        foreach (var line in File.ReadLines(path).Take(50))
+        foreach (var line in ReadAllLinesShared(path).Take(50))
         {
             try
             {
@@ -246,6 +246,25 @@ public sealed class CodexTranscriptReader : ICodexTranscriptSource
         using var reader = new StreamReader(stream, Encoding.UTF8, detectEncodingFromByteOrderMarks: true);
         return reader.ReadToEnd()
             .Split(['\r', '\n'], StringSplitOptions.RemoveEmptyEntries);
+    }
+
+    private static IReadOnlyList<string> ReadAllLinesShared(string path)
+    {
+        try
+        {
+            using var stream = File.Open(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite | FileShare.Delete);
+            using var reader = new StreamReader(stream, Encoding.UTF8, detectEncodingFromByteOrderMarks: true);
+            return reader.ReadToEnd()
+                .Split(['\r', '\n'], StringSplitOptions.RemoveEmptyEntries);
+        }
+        catch (IOException)
+        {
+            return [];
+        }
+        catch (UnauthorizedAccessException)
+        {
+            return [];
+        }
     }
 
     private static bool StringEquals(JsonElement element, string propertyName, string expected)

@@ -89,6 +89,27 @@ internal static class TranscriptReaderTests
 
         TestAssert.True(state.PendingApproval is null, "Expected approval to be resolved");
     }
+
+    public static void ReadsActiveSessionFile()
+    {
+        using var sandbox = TestSandbox.Create();
+        var now = DateTimeOffset.Parse("2026-05-21T10:00:00.000Z");
+        var path = sandbox.WriteSession(
+            "active.jsonl",
+            """
+            {"timestamp":"2026-05-21T09:59:56.000Z","type":"session_meta","payload":{"originator":"Codex Desktop"}}
+            {"timestamp":"2026-05-21T09:59:57.000Z","type":"event","payload":{"type":"task_started","turn_id":"turn-active"}}
+            """);
+
+        using var writer = new FileStream(path, FileMode.Open, FileAccess.Write, FileShare.ReadWrite);
+        writer.Seek(0, SeekOrigin.End);
+
+        var reader = new CodexTranscriptReader(sandbox.Root, now);
+        var latest = reader.LatestTaskEvent();
+
+        TestAssert.NotNull(latest, "Expected reader to tolerate an active writer handle");
+        TestAssert.Equal("turn-active", latest!.TurnId);
+    }
 }
 
 internal sealed class TestSandbox : IDisposable
@@ -107,12 +128,13 @@ internal sealed class TestSandbox : IDisposable
         return new TestSandbox(root);
     }
 
-    public void WriteSession(string relativePath, string text)
+    public string WriteSession(string relativePath, string text)
     {
         var path = Path.Combine(Root, relativePath);
         Directory.CreateDirectory(Path.GetDirectoryName(path)!);
         File.WriteAllText(path, text.Replace("\r\n", "\n"));
         File.SetLastWriteTimeUtc(path, DateTime.UtcNow);
+        return path;
     }
 
     public void Dispose()
