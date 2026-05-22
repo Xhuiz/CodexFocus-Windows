@@ -73,9 +73,10 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="180"/>
+                    <ColumnDefinition Width="190"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="180"/>
                     <ColumnDefinition Width="*"/>
@@ -85,13 +86,16 @@
                 <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding PollIntervalSeconds, UpdateSourceTrigger=PropertyChanged}"/>
                 <CheckBox Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" Content="启动后自动监听" IsChecked="{Binding AutoStartMonitoring}"/>
 
-                <TextBlock Grid.Row="1" Grid.Column="0" Text="抖音关键词" VerticalAlignment="Center"/>
-                <TextBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Text="{Binding DouyinKeywordsText, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="切换延迟（秒，0=立即）" VerticalAlignment="Center"/>
+                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding TaskSwitchDelaySeconds, UpdateSourceTrigger=PropertyChanged}"/>
 
-                <TextBlock Grid.Row="2" Grid.Column="0" Text="Codex 关键词" VerticalAlignment="Center"/>
-                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding CodexKeywordsText, UpdateSourceTrigger=PropertyChanged}"/>
-                <CheckBox Grid.Row="2" Grid.Column="2" Content="开机自启" IsChecked="{Binding StartWithWindows}"/>
-                <StackPanel Grid.Row="2" Grid.Column="3" Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="抖音关键词" VerticalAlignment="Center"/>
+                <TextBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" Text="{Binding DouyinKeywordsText, UpdateSourceTrigger=PropertyChanged}"/>
+
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="Codex 关键词" VerticalAlignment="Center"/>
+                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding CodexKeywordsText, UpdateSourceTrigger=PropertyChanged}"/>
+                <CheckBox Grid.Row="3" Grid.Column="2" Content="开机自启" IsChecked="{Binding StartWithWindows}"/>
+                <StackPanel Grid.Row="3" Grid.Column="3" Orientation="Horizontal" HorizontalAlignment="Right">
                     <Button Content="保存设置" Command="{Binding SaveSettingsCommand}"/>
                     <Button Content="刷新窗口" Command="{Binding RefreshWindowsCommand}"/>
                 </StackPanel>

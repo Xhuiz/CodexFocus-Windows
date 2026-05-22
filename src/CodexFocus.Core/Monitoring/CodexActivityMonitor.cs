@@ -76,26 +76,26 @@ public sealed class CodexActivityMonitor
         await TickActiveAsync(cancellationToken).ConfigureAwait(false);
     }
 
-    private Task TickIdleAsync(CancellationToken cancellationToken)
+    private async Task TickIdleAsync(CancellationToken cancellationToken)
     {
         var latest = transcriptSource.LatestTaskEvent();
         if (latest is null)
         {
             StatusText = "未找到 Codex Desktop 任务事件";
-            return Task.CompletedTask;
+            return;
         }
 
         if (latest.Key == observedEventKey)
         {
             StatusText = "正在监听 Codex Desktop";
-            return Task.CompletedTask;
+            return;
         }
 
         observedEventKey = latest.Key;
         if (latest.Kind != CodexTranscriptEventKind.TaskStarted)
         {
             StatusText = "最新 Codex 任务已结束，继续监听";
-            return Task.CompletedTask;
+            return;
         }
 
         activeStartEvent = latest;
@@ -105,7 +105,10 @@ public sealed class CodexActivityMonitor
         currentlyInDouyin = false;
         State = FocusMonitorState.Busy;
         StatusText = "Codex 任务进行中，等待确认是否为长任务";
-        return Task.CompletedTask;
+        if (switchDelay <= TimeSpan.Zero)
+        {
+            await SwitchToDouyinAsync(cancellationToken).ConfigureAwait(false);
+        }
     }
 
     private async Task TickActiveAsync(CancellationToken cancellationToken)
@@ -155,6 +158,14 @@ public sealed class CodexActivityMonitor
         }
 
         StatusText = switchedToDouyin ? "Codex 任务进行中" : "Codex 任务进行中，暂不切换";
+    }
+
+    private async Task SwitchToDouyinAsync(CancellationToken cancellationToken)
+    {
+        switchedToDouyin = true;
+        currentlyInDouyin = true;
+        StatusText = "Codex task is running, switched to Douyin";
+        await actions.ResumeDouyinAsync(cancellationToken).ConfigureAwait(false);
     }
 
     private async Task CompleteActiveTaskAsync(CodexTaskEvent completion, CancellationToken cancellationToken)

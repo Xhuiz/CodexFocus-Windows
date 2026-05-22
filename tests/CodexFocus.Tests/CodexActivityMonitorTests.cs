@@ -34,6 +34,21 @@ internal static class CodexActivityMonitorTests
         TestAssert.Equal(0, actions.Calls.Count);
     }
 
+    public static void SwitchesImmediatelyWhenDelayIsZero()
+    {
+        var source = new FakeTranscriptSource();
+        var actions = new FakeFocusActions();
+        var clock = new FakeClock(DateTimeOffset.Parse("2026-05-21T10:00:00.000Z"));
+        var monitor = new CodexActivityMonitor(source, actions, TimeSpan.Zero, clock.Now);
+
+        monitor.Start();
+        source.Latest = TaskEvent(CodexTranscriptEventKind.TaskStarted, "turn-1", line: 2);
+        monitor.TickAsync(CancellationToken.None).GetAwaiter().GetResult();
+
+        TestAssert.Equal(FocusMonitorState.Busy, monitor.State);
+        TestAssert.Equal("resume", string.Join(",", actions.Calls));
+    }
+
     public static void SkipsSwitchingWhenTaskCompletesBeforeDelay()
     {
         var start = TaskEvent(CodexTranscriptEventKind.TaskStarted, "turn-1", line: 2);

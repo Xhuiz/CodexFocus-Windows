@@ -9,6 +9,7 @@ var tests = new (string Name, Action Body)[]
     ("Transcript parser reads active session file", TranscriptReaderTests.ReadsActiveSessionFile),
     ("Monitor baselines existing latest event on start", CodexActivityMonitorTests.BaselinesExistingLatestEventOnStart),
     ("Monitor waits before switching to Douyin", CodexActivityMonitorTests.WaitsBeforeSwitchingToDouyin),
+    ("Monitor switches immediately when delay is zero", CodexActivityMonitorTests.SwitchesImmediatelyWhenDelayIsZero),
     ("Monitor skips switching when task completes before delay", CodexActivityMonitorTests.SkipsSwitchingWhenTaskCompletesBeforeDelay),
     ("Monitor resumes Douyin after sustained task", CodexActivityMonitorTests.ResumesDouyinAfterSustainedTask),
     ("Monitor pauses and returns on task completion", CodexActivityMonitorTests.PausesAndReturnsOnTaskCompletion),
@@ -16,6 +17,7 @@ var tests = new (string Name, Action Body)[]
     ("Monitor does not pause twice after approval return", CodexActivityMonitorTests.DoesNotPauseTwiceAfterApprovalReturn),
     ("Settings defaults match design", AppSettingsTests.DefaultsMatchDesign),
     ("Settings clamps invalid poll interval", AppSettingsTests.ClampsInvalidPollInterval),
+    ("Settings allows zero task switch delay", AppSettingsTests.AllowsZeroTaskSwitchDelay),
     ("Log buffer dispatches background writes", ThreadSafeLogBufferTests.DispatchesBackgroundWrites),
 };
 

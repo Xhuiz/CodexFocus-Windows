@@ -27,6 +27,7 @@ public sealed class MainWindowViewModel : ObservableObject, IDisposable
     private string codexWindowText = "未检测";
     private string douyinWindowText = "未检测";
     private int pollIntervalSeconds;
+    private int taskSwitchDelaySeconds;
     private bool autoStartMonitoring;
     private bool startWithWindows;
     private string douyinKeywordsText = "";
@@ -102,6 +103,12 @@ public sealed class MainWindowViewModel : ObservableObject, IDisposable
     {
         get => pollIntervalSeconds;
         set => SetProperty(ref pollIntervalSeconds, value);
+    }
+
+    public int TaskSwitchDelaySeconds
+    {
+        get => taskSwitchDelaySeconds;
+        set => SetProperty(ref taskSwitchDelaySeconds, value);
     }
 
     public bool AutoStartMonitoring
@@ -209,6 +216,7 @@ public sealed class MainWindowViewModel : ObservableObject, IDisposable
     private void SaveSettings()
     {
         settings.PollIntervalSeconds = PollIntervalSeconds;
+        settings.TaskSwitchDelaySeconds = TaskSwitchDelaySeconds;
         settings.AutoStartMonitoring = AutoStartMonitoring;
         settings.StartWithWindows = StartWithWindows;
         settings.DouyinWindowKeywords = SplitKeywords(DouyinKeywordsText);
@@ -233,6 +241,7 @@ public sealed class MainWindowViewModel : ObservableObject, IDisposable
     {
         settings.Normalize();
         PollIntervalSeconds = settings.PollIntervalSeconds;
+        TaskSwitchDelaySeconds = settings.TaskSwitchDelaySeconds;
         AutoStartMonitoring = settings.AutoStartMonitoring;
         StartWithWindows = settings.StartWithWindows || startupRegistry.IsEnabled();
         DouyinKeywordsText = string.Join(", ", settings.DouyinWindowKeywords);
