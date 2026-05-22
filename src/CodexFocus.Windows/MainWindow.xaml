@@ -6,6 +6,7 @@
         Height="640"
         MinWidth="780"
         MinHeight="540"
+        Icon="Assets/AppIcon.ico"
         Background="#F5F7FA">
     <Window.Resources>
         <Style TargetType="Button">
