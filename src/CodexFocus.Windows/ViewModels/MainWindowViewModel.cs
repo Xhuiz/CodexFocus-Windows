@@ -1,5 +1,6 @@
 using System.Collections.ObjectModel;
 using System.IO;
+using System.Windows;
 using System.Windows.Threading;
 using CodexFocus.Core.Monitoring;
 using CodexFocus.Core.Settings;
@@ -16,6 +17,7 @@ public sealed class MainWindowViewModel : ObservableObject, IDisposable
     private readonly DebugFileLogger logger = new();
     private readonly DispatcherTimer timer = new();
     private readonly WindowActivator windowActivator = new();
+    private readonly ThreadSafeLogBuffer logBuffer;
     private readonly string sessionsRoot;
     private AppSettings settings;
     private CodexActivityMonitor monitor;
@@ -39,6 +41,10 @@ public sealed class MainWindowViewModel : ObservableObject, IDisposable
             "sessions");
         settings = settingsStore.Load();
         startWithWindows = startupRegistry.IsEnabled() || settings.StartWithWindows;
+        logBuffer = new ThreadSafeLogBuffer(
+            () => Application.Current?.Dispatcher.CheckAccess() ?? true,
+            action => Application.Current?.Dispatcher.BeginInvoke(action),
+            logger.Write);
         ApplySettingsToProperties();
 
         douyinController = CreateDouyinController();
@@ -60,7 +66,7 @@ public sealed class MainWindowViewModel : ObservableObject, IDisposable
         }
     }
 
-    public ObservableCollection<string> Logs { get; } = [];
+    public ObservableCollection<string> Logs => logBuffer.Entries;
 
     public RelayCommand StartCommand { get; }
 
@@ -231,14 +237,7 @@ public sealed class MainWindowViewModel : ObservableObject, IDisposable
 
     private void AddLog(string message)
     {
-        var line = $"{DateTime.Now:HH:mm:ss} {message}";
-        Logs.Insert(0, line);
-        while (Logs.Count > 80)
-        {
-            Logs.RemoveAt(Logs.Count - 1);
-        }
-
-        logger.Write(message);
+        logBuffer.Add(message);
     }
 
     private static List<string> SplitKeywords(string text)

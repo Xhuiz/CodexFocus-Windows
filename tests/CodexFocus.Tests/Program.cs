@@ -13,6 +13,7 @@ var tests = new (string Name, Action Body)[]
     ("Monitor pauses once for approval and resumes after output", CodexActivityMonitorTests.PausesOnceForApprovalAndResumesAfterOutput),
     ("Settings defaults match design", AppSettingsTests.DefaultsMatchDesign),
     ("Settings clamps invalid poll interval", AppSettingsTests.ClampsInvalidPollInterval),
+    ("Log buffer dispatches background writes", ThreadSafeLogBufferTests.DispatchesBackgroundWrites),
 };
 
 var failed = 0;
