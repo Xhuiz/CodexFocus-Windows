@@ -37,7 +37,7 @@ public sealed class DouyinController : ICodexFocusActions
             return;
         }
 
-        await Task.Delay(TimeSpan.FromSeconds(1), cancellationToken).ConfigureAwait(false);
+        await Task.Delay(TimeSpan.FromMilliseconds(settings.ActivationDelayMilliseconds), cancellationToken).ConfigureAwait(false);
         if (currentActionId != actionId)
         {
             return;
@@ -70,7 +70,7 @@ public sealed class DouyinController : ICodexFocusActions
 
         if (!pausedByApp)
         {
-            await Task.Delay(TimeSpan.FromSeconds(1), cancellationToken).ConfigureAwait(false);
+            await Task.Delay(TimeSpan.FromMilliseconds(settings.ActivationDelayMilliseconds), cancellationToken).ConfigureAwait(false);
             if (currentActionId == actionId && windowActivator.ClickCenter(douyin))
             {
                 pausedByApp = true;
@@ -82,7 +82,7 @@ public sealed class DouyinController : ICodexFocusActions
             log("抖音已由本应用暂停，跳过重复点击");
         }
 
-        await Task.Delay(TimeSpan.FromMilliseconds(600), cancellationToken).ConfigureAwait(false);
+        await Task.Delay(TimeSpan.FromMilliseconds(settings.ReturnDelayMilliseconds), cancellationToken).ConfigureAwait(false);
         if (currentActionId == actionId)
         {
             ActivateCodex();
