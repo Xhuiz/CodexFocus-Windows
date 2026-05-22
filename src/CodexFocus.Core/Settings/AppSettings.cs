@@ -8,6 +8,8 @@ public sealed class AppSettings
 
     public int ReturnDelayMilliseconds { get; set; }
 
+    public int TaskSwitchDelaySeconds { get; set; }
+
     public bool AutoStartMonitoring { get; set; }
 
     public bool StartWithWindows { get; set; }
@@ -23,6 +25,7 @@ public sealed class AppSettings
             PollIntervalSeconds = 1,
             ActivationDelayMilliseconds = 250,
             ReturnDelayMilliseconds = 150,
+            TaskSwitchDelaySeconds = 3,
             AutoStartMonitoring = true,
             StartWithWindows = false,
             DouyinWindowKeywords = ["抖音", "Douyin", "TikTok"],
@@ -35,6 +38,7 @@ public sealed class AppSettings
         PollIntervalSeconds = Math.Clamp(PollIntervalSeconds, 1, 30);
         ActivationDelayMilliseconds = ActivationDelayMilliseconds <= 0 ? 250 : Math.Clamp(ActivationDelayMilliseconds, 50, 2_000);
         ReturnDelayMilliseconds = ReturnDelayMilliseconds <= 0 ? 150 : Math.Clamp(ReturnDelayMilliseconds, 50, 2_000);
+        TaskSwitchDelaySeconds = TaskSwitchDelaySeconds <= 0 ? 3 : Math.Clamp(TaskSwitchDelaySeconds, 1, 60);
 
         if (DouyinWindowKeywords.Count == 0)
         {

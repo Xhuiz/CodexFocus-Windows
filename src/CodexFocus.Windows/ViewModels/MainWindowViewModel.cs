@@ -149,7 +149,11 @@ public sealed class MainWindowViewModel : ObservableObject, IDisposable
     private CodexActivityMonitor CreateMonitor()
     {
         var reader = new CodexTranscriptReader(sessionsRoot);
-        return new CodexActivityMonitor(reader, douyinController);
+        return new CodexActivityMonitor(
+            reader,
+            douyinController,
+            TimeSpan.FromSeconds(settings.TaskSwitchDelaySeconds),
+            () => DateTimeOffset.UtcNow);
     }
 
     private DouyinController CreateDouyinController()

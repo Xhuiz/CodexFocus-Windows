@@ -11,6 +11,7 @@ internal static class AppSettingsTests
         TestAssert.Equal(1, settings.PollIntervalSeconds);
         TestAssert.Equal(250, settings.ActivationDelayMilliseconds);
         TestAssert.Equal(150, settings.ReturnDelayMilliseconds);
+        TestAssert.Equal(3, settings.TaskSwitchDelaySeconds);
         TestAssert.True(settings.AutoStartMonitoring, "AutoStartMonitoring should default to true");
         TestAssert.False(settings.StartWithWindows, "StartWithWindows should default to false");
         TestAssert.True(settings.DouyinWindowKeywords.Contains("Douyin"), "Douyin keyword should be present");
@@ -24,11 +25,13 @@ internal static class AppSettingsTests
         settings.PollIntervalSeconds = 0;
         settings.ActivationDelayMilliseconds = 0;
         settings.ReturnDelayMilliseconds = 0;
+        settings.TaskSwitchDelaySeconds = 0;
 
         settings.Normalize();
 
         TestAssert.Equal(1, settings.PollIntervalSeconds);
         TestAssert.Equal(250, settings.ActivationDelayMilliseconds);
         TestAssert.Equal(150, settings.ReturnDelayMilliseconds);
+        TestAssert.Equal(3, settings.TaskSwitchDelaySeconds);
     }
 }
