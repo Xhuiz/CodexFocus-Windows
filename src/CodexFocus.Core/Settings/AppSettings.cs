@@ -28,7 +28,7 @@ public sealed class AppSettings
             TaskSwitchDelaySeconds = 3,
             AutoStartMonitoring = true,
             StartWithWindows = false,
-            DouyinWindowKeywords = ["抖音", "Douyin", "TikTok"],
+            DouyinWindowKeywords = ["抖音", "Douyin", "TikTok", "douyin"],
             CodexWindowKeywords = ["Codex"]
         };
     }
@@ -42,7 +42,7 @@ public sealed class AppSettings
 
         if (DouyinWindowKeywords.Count == 0)
         {
-            DouyinWindowKeywords = ["抖音", "Douyin", "TikTok"];
+            DouyinWindowKeywords = ["抖音", "Douyin", "TikTok", "douyin"];
         }
 
         if (CodexWindowKeywords.Count == 0)

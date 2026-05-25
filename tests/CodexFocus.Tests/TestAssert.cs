@@ -33,4 +33,12 @@ internal static class TestAssert
             throw new InvalidOperationException(message);
         }
     }
+
+    public static void Null(object? value, string message)
+    {
+        if (value is not null)
+        {
+            throw new InvalidOperationException(message);
+        }
+    }
 }

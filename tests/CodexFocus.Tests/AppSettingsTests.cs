@@ -14,7 +14,9 @@ internal static class AppSettingsTests
         TestAssert.Equal(3, settings.TaskSwitchDelaySeconds);
         TestAssert.True(settings.AutoStartMonitoring, "AutoStartMonitoring should default to true");
         TestAssert.False(settings.StartWithWindows, "StartWithWindows should default to false");
+        TestAssert.True(settings.DouyinWindowKeywords.Contains("抖音"), "Chinese Douyin keyword should be present");
         TestAssert.True(settings.DouyinWindowKeywords.Contains("Douyin"), "Douyin keyword should be present");
+        TestAssert.True(settings.DouyinWindowKeywords.Contains("douyin"), "Lowercase douyin process name should be present");
         TestAssert.True(settings.DouyinWindowKeywords.Contains("TikTok"), "TikTok keyword should be present");
         TestAssert.True(settings.CodexWindowKeywords.Contains("Codex"), "Codex keyword should be present");
     }

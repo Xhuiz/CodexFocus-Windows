@@ -1,24 +1,32 @@
 using System.Diagnostics;
+using System.IO;
 using System.Runtime.InteropServices;
 using System.Text;
 
 namespace CodexFocus.Windows.Windows;
 
-public sealed record WindowMatch(IntPtr Handle, string Title, string ProcessName, int Left, int Top, int Right, int Bottom)
+public sealed record WindowMatch(
+    IntPtr Handle,
+    string Title,
+    string ProcessName,
+    int Left,
+    int Top,
+    int Right,
+    int Bottom,
+    int ProcessId = 0)
 {
     public string Description => string.IsNullOrWhiteSpace(Title)
         ? ProcessName
         : $"{Title} ({ProcessName})";
+
+    public int Area => Math.Max(0, Right - Left) * Math.Max(0, Bottom - Top);
 }
 
 public sealed class WindowActivator
 {
-    public WindowMatch? FindFirst(IReadOnlyList<string> keywords)
+    public WindowMatch? FindFirst(IReadOnlyList<string> processNames)
     {
-        return EnumerateWindows()
-            .Where(window => Matches(window, keywords))
-            .OrderByDescending(window => (window.Right - window.Left) * (window.Bottom - window.Top))
-            .FirstOrDefault();
+        return WindowMatcher.SelectBest(EnumerateWindows(), processNames, Environment.ProcessId);
     }
 
     public bool Activate(WindowMatch match)
@@ -97,7 +105,7 @@ public sealed class WindowActivator
             return null;
         }
 
-        return new WindowMatch(handle, title, processName, rect.Left, rect.Top, rect.Right, rect.Bottom);
+        return new WindowMatch(handle, title, processName, rect.Left, rect.Top, rect.Right, rect.Bottom, unchecked((int)processId));
     }
 
     private static string GetWindowTitle(IntPtr handle)
@@ -130,12 +138,45 @@ public sealed class WindowActivator
         }
     }
 
-    private static bool Matches(WindowMatch window, IReadOnlyList<string> keywords)
+}
+
+public static class WindowMatcher
+{
+    public static WindowMatch? SelectBest(IEnumerable<WindowMatch> windows, IReadOnlyList<string> processNames, int currentProcessId)
     {
-        return keywords
-            .Where(keyword => !string.IsNullOrWhiteSpace(keyword))
-            .Any(keyword =>
-                window.Title.Contains(keyword, StringComparison.OrdinalIgnoreCase) ||
-                window.ProcessName.Contains(keyword, StringComparison.OrdinalIgnoreCase));
+        return windows
+            .Where(window => IsCandidate(window, processNames, currentProcessId))
+            .OrderByDescending(window => window.Area)
+            .FirstOrDefault();
+    }
+
+    public static bool IsCandidate(WindowMatch window, IReadOnlyList<string> processNames, int currentProcessId)
+    {
+        if (currentProcessId > 0 && window.ProcessId == currentProcessId)
+        {
+            return false;
+        }
+
+        if (string.IsNullOrWhiteSpace(window.ProcessName))
+        {
+            return false;
+        }
+
+        return processNames
+            .Where(processName => !string.IsNullOrWhiteSpace(processName))
+            .Any(processName => ProcessNamesEqual(window.ProcessName, processName));
+    }
+
+    private static bool ProcessNamesEqual(string actual, string expected)
+    {
+        return string.Equals(
+            NormalizeProcessName(actual),
+            NormalizeProcessName(expected),
+            StringComparison.OrdinalIgnoreCase);
+    }
+
+    private static string NormalizeProcessName(string value)
+    {
+        return Path.GetFileNameWithoutExtension(value.Trim());
     }
 }
