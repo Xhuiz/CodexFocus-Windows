@@ -8,9 +8,9 @@ internal static class AppSettingsTests
     {
         var settings = AppSettings.CreateDefault();
 
-        TestAssert.Equal(1, settings.PollIntervalSeconds);
-        TestAssert.Equal(250, settings.ActivationDelayMilliseconds);
-        TestAssert.Equal(150, settings.ReturnDelayMilliseconds);
+        TestAssert.Equal(0.2, settings.PollIntervalSeconds);
+        TestAssert.Equal(100, settings.ActivationDelayMilliseconds);
+        TestAssert.Equal(0, settings.ReturnDelayMilliseconds);
         TestAssert.Equal(3, settings.TaskSwitchDelaySeconds);
         TestAssert.True(settings.AutoStartMonitoring, "AutoStartMonitoring should default to true");
         TestAssert.False(settings.StartWithWindows, "StartWithWindows should default to false");
@@ -31,9 +31,9 @@ internal static class AppSettingsTests
 
         settings.Normalize();
 
-        TestAssert.Equal(1, settings.PollIntervalSeconds);
-        TestAssert.Equal(250, settings.ActivationDelayMilliseconds);
-        TestAssert.Equal(150, settings.ReturnDelayMilliseconds);
+        TestAssert.Equal(0.2, settings.PollIntervalSeconds);
+        TestAssert.Equal(100, settings.ActivationDelayMilliseconds);
+        TestAssert.Equal(0, settings.ReturnDelayMilliseconds);
         TestAssert.Equal(3, settings.TaskSwitchDelaySeconds);
     }
 
@@ -45,5 +45,25 @@ internal static class AppSettingsTests
         settings.Normalize();
 
         TestAssert.Equal(0, settings.TaskSwitchDelaySeconds);
+    }
+
+    public static void AllowsSubsecondPollInterval()
+    {
+        var settings = AppSettings.CreateDefault();
+        settings.PollIntervalSeconds = 0.1;
+
+        settings.Normalize();
+
+        TestAssert.Equal(0.1, settings.PollIntervalSeconds);
+    }
+
+    public static void AllowsImmediateReturnDelay()
+    {
+        var settings = AppSettings.CreateDefault();
+        settings.ReturnDelayMilliseconds = 0;
+
+        settings.Normalize();
+
+        TestAssert.Equal(0, settings.ReturnDelayMilliseconds);
     }
 }

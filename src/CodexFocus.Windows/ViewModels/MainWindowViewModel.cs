@@ -26,7 +26,7 @@ public sealed class MainWindowViewModel : ObservableObject, IDisposable
     private string statusText = "初始化中";
     private string codexWindowText = "未检测";
     private string douyinWindowText = "未检测";
-    private int pollIntervalSeconds;
+    private double pollIntervalSeconds;
     private int taskSwitchDelaySeconds;
     private bool autoStartMonitoring;
     private bool startWithWindows;
@@ -99,7 +99,7 @@ public sealed class MainWindowViewModel : ObservableObject, IDisposable
         private set => SetProperty(ref douyinWindowText, value);
     }
 
-    public int PollIntervalSeconds
+    public double PollIntervalSeconds
     {
         get => pollIntervalSeconds;
         set => SetProperty(ref pollIntervalSeconds, value);

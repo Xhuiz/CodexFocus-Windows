@@ -18,6 +18,8 @@ var tests = new (string Name, Action Body)[]
     ("Settings defaults match design", AppSettingsTests.DefaultsMatchDesign),
     ("Settings clamps invalid poll interval", AppSettingsTests.ClampsInvalidPollInterval),
     ("Settings allows zero task switch delay", AppSettingsTests.AllowsZeroTaskSwitchDelay),
+    ("Settings allows subsecond poll interval", AppSettingsTests.AllowsSubsecondPollInterval),
+    ("Settings allows immediate return delay", AppSettingsTests.AllowsImmediateReturnDelay),
     ("Window matcher ignores title-only keyword matches", WindowMatcherTests.IgnoresTitleOnlyKeywordMatches),
     ("Window matcher selects exact process name over misleading title", WindowMatcherTests.SelectsExactProcessNameOverMisleadingTitle),
     ("Window matcher ignores current application process", WindowMatcherTests.IgnoresCurrentApplicationProcess),

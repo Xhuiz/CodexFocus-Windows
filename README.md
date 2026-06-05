@@ -33,10 +33,10 @@ Codex Focus Windows 是一个 Windows 桌面工具，用来在 Codex Desktop 执
 
 常用配置项：
 
-- `PollIntervalSeconds`：轮询间隔，默认 `1` 秒。
+- `PollIntervalSeconds`：轮询间隔，默认 `0.2` 秒，支持小数。
 - `TaskSwitchDelaySeconds`：Codex 开始任务后多久切到抖音，`0` 表示立即切换。
-- `ActivationDelayMilliseconds`：激活抖音窗口后的点击等待时间。
-- `ReturnDelayMilliseconds`：暂停抖音后切回 Codex 的等待时间。
+- `ActivationDelayMilliseconds`：激活抖音窗口后的点击等待时间，默认 `100` 毫秒。
+- `ReturnDelayMilliseconds`：暂停抖音后切回 Codex 的等待时间，默认 `0` 毫秒。
 - `DouyinWindowKeywords`：匹配抖音窗口的进程名，默认包含 `douyin`。
 - `CodexWindowKeywords`：匹配 Codex 窗口的进程名，默认包含 `Codex`。
 

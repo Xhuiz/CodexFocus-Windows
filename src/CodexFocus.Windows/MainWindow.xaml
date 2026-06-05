@@ -82,7 +82,7 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <TextBlock Grid.Row="0" Grid.Column="0" Text="轮询间隔（秒）" VerticalAlignment="Center"/>
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="轮询间隔（秒，可填 0.2）" VerticalAlignment="Center"/>
                 <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding PollIntervalSeconds, UpdateSourceTrigger=PropertyChanged}"/>
                 <CheckBox Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" Content="启动后自动监听" IsChecked="{Binding AutoStartMonitoring}"/>
 
