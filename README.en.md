@@ -82,6 +82,7 @@ dotnet run --project tests\CodexFocus.Tests\CodexFocus.Tests.csproj
 - Support and bug reports: [SUPPORT.md](SUPPORT.md)
 - Security policy: [SECURITY.md](SECURITY.md)
 - Contribution guide: [CONTRIBUTING.md](CONTRIBUTING.md)
+- Code of conduct: [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
 - Do not paste private Codex prompts, transcripts, credentials, tokens, or personal data in issues.
 ## Scope Notes
 
