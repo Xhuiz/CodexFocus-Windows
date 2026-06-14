@@ -8,6 +8,8 @@ Codex Focus Windows is a Windows productivity utility for Codex Desktop and Douy
 
 - Project homepage: https://xhuiz.github.io/CodexFocus-Windows/
 - GitHub repository: https://github.com/Xhuiz/CodexFocus-Windows
+- English README: https://github.com/Xhuiz/CodexFocus-Windows/blob/main/README.en.md
+- English homepage: https://xhuiz.github.io/CodexFocus-Windows/en/
 - Latest release: https://github.com/Xhuiz/CodexFocus-Windows/releases/tag/v0.1.0
 - Windows download: https://github.com/Xhuiz/CodexFocus-Windows/releases/download/v0.1.0/CodexFocus-Windows-v0.1.0-win-x64.zip
 - Full LLM summary: https://xhuiz.github.io/CodexFocus-Windows/llms-full.txt
