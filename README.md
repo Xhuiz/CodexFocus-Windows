@@ -2,7 +2,7 @@
 
 [![Release](https://img.shields.io/github/v/release/Xhuiz/CodexFocus-Windows?label=release)](https://github.com/Xhuiz/CodexFocus-Windows/releases) [![Build Windows release](https://github.com/Xhuiz/CodexFocus-Windows/actions/workflows/release.yml/badge.svg)](https://github.com/Xhuiz/CodexFocus-Windows/actions/workflows/release.yml)
 
-[项目主页](https://xhuiz.github.io/CodexFocus-Windows/) · [English](README.en.md) · [使用指南](https://xhuiz.github.io/CodexFocus-Windows/guides/codex-douyin-auto-switch.html) · [问答](https://xhuiz.github.io/CodexFocus-Windows/answers/codex-douyin-auto-switch.html) · [下载页](https://xhuiz.github.io/CodexFocus-Windows/download.html) · [支持](SUPPORT.md) · [安全](SECURITY.md) · [贡献](CONTRIBUTING.md) · [传播素材](https://xhuiz.github.io/CodexFocus-Windows/share-kit.html) · [下载 Windows Release](https://github.com/Xhuiz/CodexFocus-Windows/releases) · [llms.txt](https://xhuiz.github.io/CodexFocus-Windows/llms.txt) · [CodeMeta](codemeta.json) · [Citation](CITATION.cff)
+[项目主页](https://xhuiz.github.io/CodexFocus-Windows/) · [English](README.en.md) · [使用指南](https://xhuiz.github.io/CodexFocus-Windows/guides/codex-douyin-auto-switch.html) · [问答](https://xhuiz.github.io/CodexFocus-Windows/answers/codex-douyin-auto-switch.html) · [下载页](https://xhuiz.github.io/CodexFocus-Windows/download.html) · [故障排查](https://xhuiz.github.io/CodexFocus-Windows/troubleshooting.html) · [支持](SUPPORT.md) · [安全](SECURITY.md) · [贡献](CONTRIBUTING.md) · [传播素材](https://xhuiz.github.io/CodexFocus-Windows/share-kit.html) · [下载 Windows Release](https://github.com/Xhuiz/CodexFocus-Windows/releases) · [llms.txt](https://xhuiz.github.io/CodexFocus-Windows/llms.txt) · [CodeMeta](codemeta.json) · [Citation](CITATION.cff)
 
 **Codex Focus Windows** 是一个面向 Windows 的 **Codex 抖音自动切换工具**。当 Codex Desktop 开始执行任务时，它会自动切到抖音 Windows 客户端并继续播放；当 Codex 任务完成、失败、终止或需要权限确认时，它会暂停抖音并切回 Codex。
 
@@ -122,6 +122,7 @@ Codex 抖音自动切换、Codex 自动暂停抖音、Codex 自动播放抖音�
 
 ## 支持、安全和贡献
 
+- 故障排查：见 <https://xhuiz.github.io/CodexFocus-Windows/troubleshooting.html>。
 - 支持与问题反馈：见 [SUPPORT.md](SUPPORT.md)。
 - 安全边界和漏洞反馈：见 [SECURITY.md](SECURITY.md)。
 - 贡献指南和本地构建：见 [CONTRIBUTING.md](CONTRIBUTING.md)。
