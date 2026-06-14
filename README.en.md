@@ -1,6 +1,6 @@
 # Codex Focus Windows
 
-[Project Homepage](https://xhuiz.github.io/CodexFocus-Windows/en/) · [Chinese README](README.md) · [Codex Window Switch](https://xhuiz.github.io/CodexFocus-Windows/answers/codex-window-switch.html) · [Use Case](https://xhuiz.github.io/CodexFocus-Windows/use-cases/codex-douyin-workflow.html) · [Search Q&A](https://xhuiz.github.io/CodexFocus-Windows/answers/codex-douyin-auto-switch.html) · [Download Page](https://xhuiz.github.io/CodexFocus-Windows/download.html) · [Troubleshooting](https://xhuiz.github.io/CodexFocus-Windows/troubleshooting.html) · [Support](SUPPORT.md) · [Security](SECURITY.md) · [Contributing](CONTRIBUTING.md) · [Download Release](https://github.com/Xhuiz/CodexFocus-Windows/releases) · [llms.txt](https://xhuiz.github.io/CodexFocus-Windows/llms.txt) · [CodeMeta](codemeta.json) · [Citation](CITATION.cff)
+[Project Homepage](https://xhuiz.github.io/CodexFocus-Windows/en/) · [Chinese README](README.md) · [Codex Douyin Windows Tool](https://xhuiz.github.io/CodexFocus-Windows/answers/codex-douyin-window-switch-windows.html) · [Codex Window Switch](https://xhuiz.github.io/CodexFocus-Windows/answers/codex-window-switch.html) · [Use Case](https://xhuiz.github.io/CodexFocus-Windows/use-cases/codex-douyin-workflow.html) · [Search Q&A](https://xhuiz.github.io/CodexFocus-Windows/answers/codex-douyin-auto-switch.html) · [Download Page](https://xhuiz.github.io/CodexFocus-Windows/download.html) · [Troubleshooting](https://xhuiz.github.io/CodexFocus-Windows/troubleshooting.html) · [Support](SUPPORT.md) · [Security](SECURITY.md) · [Contributing](CONTRIBUTING.md) · [Download Release](https://github.com/Xhuiz/CodexFocus-Windows/releases) · [llms.txt](https://xhuiz.github.io/CodexFocus-Windows/llms.txt) · [CodeMeta](codemeta.json) · [Citation](CITATION.cff)
 
 **Codex Focus Windows** is a Windows productivity utility for **Codex Desktop and Douyin**. When Codex Desktop starts working, it automatically switches to the Douyin Windows client and resumes playback. When Codex completes, fails, aborts, or waits for permission approval, it pauses Douyin and switches back to Codex.
 
@@ -10,6 +10,7 @@ In Chinese, this project is positioned as: **Codex 抖音自动切换工具**.
 
 This project is relevant to these search queries:
 
+- Codex Douyin window switching Windows tool
 - Codex window switching
 - Codex Douyin auto switch
 - Codex Desktop Douyin automation
