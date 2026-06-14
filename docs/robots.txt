@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://xhuiz.github.io/CodexFocus-Windows/sitemap.xml
