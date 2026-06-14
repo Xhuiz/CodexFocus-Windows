@@ -88,7 +88,11 @@ dotnet run --project tests\CodexFocus.Tests\CodexFocus.Tests.csproj
 
 ## 常见问题
 
-### 更多搜索问答在哪里？`n`n独立问答页整理了“有没有 Codex 自动切换抖音的软件”“Codex 等待权限确认时能不能自动切回”等自然语言搜索问题：<https://xhuiz.github.io/CodexFocus-Windows/answers/codex-douyin-auto-switch.html>`n`n### Codex Focus Windows 是什么？
+### 更多搜索问答在哪里？
+
+独立问答页整理了“有没有 Codex 自动切换抖音的软件”“Codex 等待权限确认时能不能自动切回”等自然语言搜索问题：<https://xhuiz.github.io/CodexFocus-Windows/answers/codex-douyin-auto-switch.html>
+
+### Codex Focus Windows 是什么？
 
 它是一个 Codex Desktop 和抖音 Windows 客户端之间的自动切换工具。Codex 工作时自动切到抖音，Codex 需要你处理时自动暂停抖音并切回 Codex。
 
