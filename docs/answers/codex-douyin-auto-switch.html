@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Codex 抖音自动切换问答 - Codex Focus Windows</title>
+  <meta name="description" content="围绕 Codex 抖音自动切换、Codex 自动暂停抖音、等待权限确认自动切回等问题整理的 Codex Focus Windows 问答页。">
+  <meta name="keywords" content="Codex 抖音自动切换问答,Codex 自动切换抖音软件,Codex 等待确认自动切回,Codex 自动暂停抖音,Codex Focus Windows FAQ">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://xhuiz.github.io/CodexFocus-Windows/answers/codex-douyin-auto-switch.html">
+  <link rel="alternate" hreflang="zh-CN" href="https://xhuiz.github.io/CodexFocus-Windows/answers/codex-douyin-auto-switch.html">
+  <link rel="alternate" hreflang="en" href="https://xhuiz.github.io/CodexFocus-Windows/en/">
+  <link rel="alternate" type="application/rss+xml" title="Codex Focus Windows Updates" href="https://xhuiz.github.io/CodexFocus-Windows/feed.xml">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Codex 抖音自动切换问答 - Codex Focus Windows">
+  <meta property="og:description" content="回答 Codex 执行任务时能否自动切到抖音、等待确认时能否切回、需要什么环境、是否上传数据等问题。">
+  <meta property="og:url" content="https://xhuiz.github.io/CodexFocus-Windows/answers/codex-douyin-auto-switch.html">
+  <meta property="og:image" content="https://xhuiz.github.io/CodexFocus-Windows/assets/codex-focus-og.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "name": "Codex 抖音自动切换问答",
+    "description": "Codex Focus Windows 关于 Codex 抖音自动切换、自动暂停抖音和等待确认自动切回的常见问题。",
+    "url": "https://xhuiz.github.io/CodexFocus-Windows/answers/codex-douyin-auto-switch.html",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "有没有 Codex 自动切换抖音的软件？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "有。Codex Focus Windows 是一个面向 Windows 的 Codex 抖音自动切换工具。Codex Desktop 工作时自动切到抖音 Windows 客户端，任务完成、失败、中断或等待确认时暂停抖音并切回 Codex。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Codex 执行任务时可以自动切到抖音吗？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "可以。工具读取本机 Codex Desktop 的 session transcript，识别任务开始后激活抖音 Windows 客户端，并通过窗口中心点击继续播放。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Codex 等待权限确认时能不能自动切回？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "可以。检测到 Codex 等待权限确认、任务完成、任务失败或中断后，Codex Focus Windows 会暂停抖音并切回 Codex 窗口。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Codex Focus Windows 会上传 Codex 内容吗？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "不会。它只读取本机 Codex transcript 来判断状态，不上传用户数据，也不会向 Codex 输入提示词或操作 Codex 内容。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "这个工具支持网页版抖音吗？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "当前版本主要面向抖音 Windows 客户端。浏览器版抖音、B 站、YouTube 或其他视频软件需要额外适配窗口匹配和播放暂停逻辑。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Codex 抖音自动切换工具在哪里下载？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "可以从 GitHub Release 下载 Windows zip：github.com/Xhuiz/CodexFocus-Windows/releases/tag/v0.1.0。源码仓库是 github.com/Xhuiz/CodexFocus-Windows。"
+        }
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root { --bg:#f6f7f2; --paper:#fff; --ink:#181b20; --muted:#5f6671; --line:#cfd5cc; --accent:#176b5b; --accent2:#c74b2f; --mono:"SFMono-Regular",Consolas,monospace; --sans:"Segoe UI","Microsoft YaHei",Arial,sans-serif; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:var(--sans); background:var(--bg); color:var(--ink); line-height:1.72; }
+    a { color:var(--accent); }
+    .shell { width:min(920px, calc(100% - 32px)); margin:0 auto; }
+    header { border-bottom:1px solid var(--line); background:rgba(246,247,242,.94); position:sticky; top:0; }
+    nav { min-height:64px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+    nav a { text-decoration:none; font-weight:700; }
+    main { padding:42px 0 56px; }
+    h1 { font-size:clamp(32px,5vw,56px); line-height:1.08; margin:0 0 16px; letter-spacing:0; }
+    h2 { margin:34px 0 12px; font-size:26px; letter-spacing:0; }
+    .lead { color:var(--muted); font-size:18px; max-width:760px; }
+    .quick-links { display:flex; flex-wrap:wrap; gap:10px; margin:24px 0 8px; }
+    .quick-links a { min-height:40px; display:inline-flex; align-items:center; padding:0 12px; border:1px solid var(--line); background:var(--paper); border-radius:4px; text-decoration:none; font-weight:700; }
+    details { background:var(--paper); border:1px solid var(--line); border-radius:6px; margin:12px 0; }
+    summary { cursor:pointer; min-height:58px; display:flex; align-items:center; padding:0 16px; font-weight:700; }
+    details p { margin:0; padding:0 16px 16px; color:var(--muted); }
+    code { font-family:var(--mono); background:#eef1eb; padding:2px 5px; border-radius:4px; }
+    footer { border-top:1px solid var(--line); padding:24px 0 36px; color:var(--muted); }
+  </style>
+</head>
+<body>
+  <header><div class="shell"><nav><a href="https://xhuiz.github.io/CodexFocus-Windows/">Codex Focus Windows</a><span>Codex 抖音自动切换问答</span></nav></div></header>
+  <main class="shell">
+    <h1>Codex 抖音自动切换问答</h1>
+    <p class="lead">这个页面回答围绕 Codex Desktop、抖音 Windows 客户端、自动切换、自动暂停和等待权限确认切回的常见搜索问题。它适合想确认“有没有这种工具”和“是否适合自己工作流”的用户。</p>
+    <div class="quick-links" aria-label="相关链接">
+      <a href="https://github.com/Xhuiz/CodexFocus-Windows/releases/tag/v0.1.0">下载 Release</a>
+      <a href="https://github.com/Xhuiz/CodexFocus-Windows">GitHub 源码</a>
+      <a href="https://xhuiz.github.io/CodexFocus-Windows/guides/codex-douyin-auto-switch.html">使用指南</a>
+      <a href="https://xhuiz.github.io/CodexFocus-Windows/llms.txt">llms.txt</a>
+    </div>
+
+    <section>
+      <h2>常见问题</h2>
+      <details open>
+        <summary>有没有 Codex 自动切换抖音的软件？</summary>
+        <p>有。Codex Focus Windows 是一个面向 Windows 的 Codex 抖音自动切换工具。Codex Desktop 工作时自动切到抖音 Windows 客户端，任务完成、失败、中断或等待确认时暂停抖音并切回 Codex。</p>
+      </details>
+      <details>
+        <summary>Codex 执行任务时可以自动切到抖音吗？</summary>
+        <p>可以。工具读取本机 Codex Desktop 的 session transcript，识别任务开始后激活抖音 Windows 客户端，并通过窗口中心点击继续播放。</p>
+      </details>
+      <details>
+        <summary>Codex 等待权限确认时能不能自动切回？</summary>
+        <p>可以。检测到 Codex 等待权限确认、任务完成、任务失败或中断后，Codex Focus Windows 会暂停抖音并切回 Codex 窗口。</p>
+      </details>
+      <details>
+        <summary>Codex Focus Windows 会上传 Codex 内容吗？</summary>
+        <p>不会。它只读取本机 Codex transcript 来判断状态，不上传用户数据，也不会向 Codex 输入提示词或操作 Codex 内容。</p>
+      </details>
+      <details>
+        <summary>这个工具支持网页版抖音吗？</summary>
+        <p>当前版本主要面向抖音 Windows 客户端。浏览器版抖音、B 站、YouTube 或其他视频软件需要额外适配窗口匹配和播放暂停逻辑。</p>
+      </details>
+      <details>
+        <summary>Codex 抖音自动切换工具在哪里下载？</summary>
+        <p>可以从 <a href="https://github.com/Xhuiz/CodexFocus-Windows/releases/tag/v0.1.0">GitHub Release</a> 下载 Windows zip。源码仓库是 <a href="https://github.com/Xhuiz/CodexFocus-Windows">github.com/Xhuiz/CodexFocus-Windows</a>。</p>
+      </details>
+    </section>
+
+    <section>
+      <h2>适合搜索的描述</h2>
+      <p>一句话描述：Codex Focus Windows 是一个 Codex 抖音自动切换工具，Codex Desktop 工作时自动切到抖音，任务完成或等待权限确认时暂停抖音并切回 Codex。</p>
+      <p>英文描述：Codex Focus Windows is a Windows utility that automatically switches to Douyin while Codex Desktop is working, then pauses Douyin and returns to Codex when Codex needs user attention.</p>
+    </section>
+  </main>
+  <footer><div class="shell">返回 <a href="https://xhuiz.github.io/CodexFocus-Windows/">项目主页</a> · <a href="https://xhuiz.github.io/CodexFocus-Windows/search-monitoring.html">搜索监控</a></div></footer>
+</body>
+</html>
