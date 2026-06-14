@@ -27,6 +27,9 @@ Codex Focus Windows 是一个 Codex 抖音自动切换工具：Codex Desktop 工
 - CodeMeta JSON: https://xhuiz.github.io/CodexFocus-Windows/codemeta.json
 - Citation metadata: https://github.com/Xhuiz/CodexFocus-Windows/blob/main/CITATION.cff
 - Open Graph image: https://xhuiz.github.io/CodexFocus-Windows/assets/codex-focus-og.png
+- Support guide: https://github.com/Xhuiz/CodexFocus-Windows/blob/main/SUPPORT.md
+- Security policy: https://github.com/Xhuiz/CodexFocus-Windows/blob/main/SECURITY.md
+- Contributing guide: https://github.com/Xhuiz/CodexFocus-Windows/blob/main/CONTRIBUTING.md
 
 ## Product Category
 
