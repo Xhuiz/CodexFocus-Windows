@@ -33,7 +33,12 @@
                      "windows-automation",
                      "douyin-automation",
                      "Codex 长任务等待",
-                     "AI 编程等待自动切换"
+                     "AI 编程等待自动切换",
+                     "Codex窗口切换",
+                     "Codex 窗口切换",
+                     "Codex 自动切换窗口",
+                     "Codex window switching",
+                     "window switching"
                  ],
     "codeRepository":  "https://github.com/Xhuiz/CodexFocus-Windows",
     "url":  "https://xhuiz.github.io/CodexFocus-Windows/",
@@ -47,7 +52,8 @@
                    "https://xhuiz.github.io/CodexFocus-Windows/llms.txt",
                    "https://xhuiz.github.io/CodexFocus-Windows/download.html",
                    "https://xhuiz.github.io/CodexFocus-Windows/troubleshooting.html",
-                   "https://xhuiz.github.io/CodexFocus-Windows/use-cases/codex-douyin-workflow.html"
+                   "https://xhuiz.github.io/CodexFocus-Windows/use-cases/codex-douyin-workflow.html",
+                   "https://xhuiz.github.io/CodexFocus-Windows/answers/codex-window-switch.html"
                ],
     "version":  "0.1.0",
     "datePublished":  "2026-06-14",
