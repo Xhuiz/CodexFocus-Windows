@@ -14,6 +14,8 @@ Codex Focus Windows 是一个 Codex 抖音自动切换工具：Codex Desktop 工
 - Repository: https://github.com/Xhuiz/CodexFocus-Windows
 - Release v0.1.0: https://github.com/Xhuiz/CodexFocus-Windows/releases/tag/v0.1.0
 - Windows zip: https://github.com/Xhuiz/CodexFocus-Windows/releases/download/v0.1.0/CodexFocus-Windows-v0.1.0-win-x64.zip
+- Usage guide: https://xhuiz.github.io/CodexFocus-Windows/guides/codex-douyin-auto-switch.html
+- Sharing kit: https://xhuiz.github.io/CodexFocus-Windows/share-kit.html
 
 ## Product Category
 
