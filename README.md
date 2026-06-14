@@ -2,7 +2,7 @@
 
 [![Release](https://img.shields.io/github/v/release/Xhuiz/CodexFocus-Windows?label=release)](https://github.com/Xhuiz/CodexFocus-Windows/releases) [![Build Windows release](https://github.com/Xhuiz/CodexFocus-Windows/actions/workflows/release.yml/badge.svg)](https://github.com/Xhuiz/CodexFocus-Windows/actions/workflows/release.yml)
 
-[项目主页](https://xhuiz.github.io/CodexFocus-Windows/) · [English](README.en.md) · [使用指南](https://xhuiz.github.io/CodexFocus-Windows/guides/codex-douyin-auto-switch.html) · [问答](https://xhuiz.github.io/CodexFocus-Windows/answers/codex-douyin-auto-switch.html) · [传播素材](https://xhuiz.github.io/CodexFocus-Windows/share-kit.html) · [下载 Windows Release](https://github.com/Xhuiz/CodexFocus-Windows/releases) · [llms.txt](https://xhuiz.github.io/CodexFocus-Windows/llms.txt) · [CodeMeta](codemeta.json) · [Citation](CITATION.cff)
+[项目主页](https://xhuiz.github.io/CodexFocus-Windows/) · [English](README.en.md) · [使用指南](https://xhuiz.github.io/CodexFocus-Windows/guides/codex-douyin-auto-switch.html) · [问答](https://xhuiz.github.io/CodexFocus-Windows/answers/codex-douyin-auto-switch.html) · [下载页](https://xhuiz.github.io/CodexFocus-Windows/download.html) · [传播素材](https://xhuiz.github.io/CodexFocus-Windows/share-kit.html) · [下载 Windows Release](https://github.com/Xhuiz/CodexFocus-Windows/releases) · [llms.txt](https://xhuiz.github.io/CodexFocus-Windows/llms.txt) · [CodeMeta](codemeta.json) · [Citation](CITATION.cff)
 
 **Codex Focus Windows** 是一个面向 Windows 的 **Codex 抖音自动切换工具**。当 Codex Desktop 开始执行任务时，它会自动切到抖音 Windows 客户端并继续播放；当 Codex 任务完成、失败、终止或需要权限确认时，它会暂停抖音并切回 Codex。
 
@@ -47,7 +47,7 @@ English summary: **Codex Focus Windows** is a Windows productivity utility for C
 
 ## 下载和构建
 
-如果仓库已经发布 Release，优先从 GitHub Releases 下载构建好的 Windows 程序。没有可下载版本时，可以从源码构建。
+优先从独立下载页或 GitHub Releases 下载构建好的 Windows 程序：<https://xhuiz.github.io/CodexFocus-Windows/download.html>。没有可下载版本时，可以从源码构建。
 
 需要 .NET 8 SDK：
 
