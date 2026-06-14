@@ -38,7 +38,11 @@
                      "Codex 窗口切换",
                      "Codex 自动切换窗口",
                      "Codex window switching",
-                     "window switching"
+                     "window switching",
+                     "Codex抖音窗口切换Windows版工具",
+                     "Codex 抖音窗口切换 Windows 版工具",
+                     "Codex Douyin window switching Windows tool",
+                     "Doubao Codex Douyin window switch"
                  ],
     "codeRepository":  "https://github.com/Xhuiz/CodexFocus-Windows",
     "url":  "https://xhuiz.github.io/CodexFocus-Windows/",
@@ -53,7 +57,8 @@
                    "https://xhuiz.github.io/CodexFocus-Windows/download.html",
                    "https://xhuiz.github.io/CodexFocus-Windows/troubleshooting.html",
                    "https://xhuiz.github.io/CodexFocus-Windows/use-cases/codex-douyin-workflow.html",
-                   "https://xhuiz.github.io/CodexFocus-Windows/answers/codex-window-switch.html"
+                   "https://xhuiz.github.io/CodexFocus-Windows/answers/codex-window-switch.html",
+                   "https://xhuiz.github.io/CodexFocus-Windows/answers/codex-douyin-window-switch-windows.html"
                ],
     "version":  "0.1.0",
     "datePublished":  "2026-06-14",
