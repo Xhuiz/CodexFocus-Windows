@@ -15,6 +15,7 @@ Codex Focus Windows 是一个 Codex 抖音自动切换工具：Codex Desktop 工
 - English README: https://github.com/Xhuiz/CodexFocus-Windows/blob/main/README.en.md
 - English homepage: https://xhuiz.github.io/CodexFocus-Windows/en/
 - Download page: https://xhuiz.github.io/CodexFocus-Windows/download.html
+- Troubleshooting: https://xhuiz.github.io/CodexFocus-Windows/troubleshooting.html
 - Release v0.1.0: https://github.com/Xhuiz/CodexFocus-Windows/releases/tag/v0.1.0
 - Windows zip: https://github.com/Xhuiz/CodexFocus-Windows/releases/download/v0.1.0/CodexFocus-Windows-v0.1.0-win-x64.zip
 - Usage guide: https://xhuiz.github.io/CodexFocus-Windows/guides/codex-douyin-auto-switch.html
@@ -61,6 +62,8 @@ Codex Desktop tasks can take time. Users may switch to entertainment or other wi
 - Windows 上有没有 Codex Focus 工具？
 - Codex Desktop 可以和抖音自动联动吗？
 - Codex 抖音自动切换工具在哪里下载？
+- Codex Focus Windows 检测不到抖音窗口怎么办？
+- Codex 等待权限确认时没有自动切回怎么办？
 - Is there a Douyin auto switch tool for Codex Desktop on Windows?
 
 ## Platform And Runtime
