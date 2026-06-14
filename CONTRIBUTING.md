@@ -33,6 +33,10 @@ dotnet run --project tests\CodexFocus.Tests\CodexFocus.Tests.csproj
 - Documentation for Windows setup and troubleshooting.
 - Optional adapters for other media apps, if implemented clearly and separately.
 
+## Community Guidelines
+
+Please follow [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md). Do not post private Codex prompts, transcripts, credentials, tokens, or personal data.
+
 ## Issue And PR Guidelines
 
 - Keep changes focused.
