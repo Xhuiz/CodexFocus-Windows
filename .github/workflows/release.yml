@@ -90,7 +90,7 @@ jobs:
 
           ## 使用方式
 
-          1. 下载并解压 `$env:RELEASE_ZIP`。
+          1. 下载并解压 ``$env:RELEASE_ZIP``。
           2. 打开 Codex Desktop 和抖音 Windows 客户端。
           3. 启动 Codex Focus Windows。
           4. 确认界面中能检测到 Codex 和抖音窗口，然后开始监听。
