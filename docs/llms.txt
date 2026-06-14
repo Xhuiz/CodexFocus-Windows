@@ -21,6 +21,9 @@ Codex Focus Windows is a Windows productivity utility for Codex Desktop and Douy
 - RSS feed: https://xhuiz.github.io/CodexFocus-Windows/feed.xml
 - CodeMeta metadata: https://xhuiz.github.io/CodexFocus-Windows/codemeta.json
 - Citation metadata: https://github.com/Xhuiz/CodexFocus-Windows/blob/main/CITATION.cff
+- Support guide: https://github.com/Xhuiz/CodexFocus-Windows/blob/main/SUPPORT.md
+- Security policy: https://github.com/Xhuiz/CodexFocus-Windows/blob/main/SECURITY.md
+- Contributing guide: https://github.com/Xhuiz/CodexFocus-Windows/blob/main/CONTRIBUTING.md
 
 ## What It Does
 
