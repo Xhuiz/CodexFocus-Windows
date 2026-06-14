@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Codex 长任务等待时自动切到抖音 - Codex Focus Windows 使用场景</title>
+  <meta name="description" content="Codex Focus Windows 使用场景：Codex Desktop 执行长任务时自动切到抖音，任务完成、失败、中断或等待权限确认时暂停抖音并切回 Codex。">
+  <meta name="keywords" content="Codex 长任务等待,Codex 工作时看抖音,Codex 自动切窗口,AI 编程等待期间自动切换,Codex 完成后切回,Codex Desktop 抖音联动">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://xhuiz.github.io/CodexFocus-Windows/use-cases/codex-douyin-workflow.html">
+  <link rel="alternate" hreflang="zh-CN" href="https://xhuiz.github.io/CodexFocus-Windows/use-cases/codex-douyin-workflow.html">
+  <link rel="alternate" hreflang="en" href="https://xhuiz.github.io/CodexFocus-Windows/en/">
+  <link rel="alternate" type="application/rss+xml" title="Codex Focus Windows Updates" href="https://xhuiz.github.io/CodexFocus-Windows/feed.xml">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Codex 长任务等待时自动切到抖音 - Codex Focus Windows">
+  <meta property="og:description" content="适合 Codex 长任务等待、权限确认、任务完成提醒和 Windows 自动切窗口的使用场景。">
+  <meta property="og:url" content="https://xhuiz.github.io/CodexFocus-Windows/use-cases/codex-douyin-workflow.html">
+  <meta property="og:image" content="https://xhuiz.github.io/CodexFocus-Windows/assets/codex-focus-og.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Codex 长任务等待时自动切到抖音",
+    "description": "Codex Focus Windows 的典型使用场景：Codex Desktop 工作时自动切到抖音，完成或等待确认时切回 Codex。",
+    "url": "https://xhuiz.github.io/CodexFocus-Windows/use-cases/codex-douyin-workflow.html",
+    "image": "https://xhuiz.github.io/CodexFocus-Windows/assets/codex-focus-og.png",
+    "about": ["Codex Desktop", "Douyin", "Windows automation", "AI coding productivity"],
+    "author": {"@type": "Person", "name": "Xhuiz", "url": "https://github.com/Xhuiz"},
+    "mainEntityOfPage": "https://xhuiz.github.io/CodexFocus-Windows/use-cases/codex-douyin-workflow.html"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "Codex 执行长任务时可以自动切到抖音吗？", "acceptedAnswer": {"@type": "Answer", "text": "可以。Codex Focus Windows 会在检测到 Codex Desktop 开始工作后自动激活抖音 Windows 客户端，让用户在等待期间观看内容。"}},
+      {"@type": "Question", "name": "Codex 完成任务后能提醒我回到 Codex 吗？", "acceptedAnswer": {"@type": "Answer", "text": "可以。工具检测到任务完成、失败、中断或等待权限确认时，会暂停抖音并切回 Codex。"}},
+      {"@type": "Question", "name": "这个工作流适合哪些用户？", "acceptedAnswer": {"@type": "Answer", "text": "适合经常让 Codex Desktop 执行较长任务、希望等待期间临时切到抖音、但又不想错过完成结果或权限确认的 Windows 用户。"}}
+    ]
+  }
+  </script>
+  <style>
+    :root { --bg:#f6f7f2; --paper:#fff; --ink:#181b20; --muted:#5f6671; --line:#cfd5cc; --accent:#176b5b; --accent2:#c74b2f; --mono:"SFMono-Regular",Consolas,monospace; --sans:"Segoe UI","Microsoft YaHei",Arial,sans-serif; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:var(--sans); background:var(--bg); color:var(--ink); line-height:1.72; }
+    a { color:var(--accent); }
+    .shell { width:min(980px, calc(100% - 32px)); margin:0 auto; }
+    header { border-bottom:1px solid var(--line); background:rgba(246,247,242,.94); position:sticky; top:0; }
+    nav { min-height:64px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+    nav a { text-decoration:none; font-weight:700; }
+    main { padding:42px 0 56px; }
+    h1 { font-size:clamp(32px,5vw,58px); line-height:1.08; margin:0 0 16px; letter-spacing:0; }
+    h2 { margin:34px 0 12px; font-size:26px; letter-spacing:0; }
+    .lead { color:var(--muted); font-size:18px; max-width:780px; }
+    .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+    .card, .flow { background:var(--paper); border:1px solid var(--line); border-radius:6px; padding:18px; }
+    .card h3 { margin:0 0 8px; font-size:19px; }
+    .card p, .flow p { margin:0; color:var(--muted); }
+    .flow ol { margin:0; padding-left:22px; }
+    li { margin:8px 0; }
+    code { font-family:var(--mono); background:#eef1eb; padding:2px 5px; border-radius:4px; }
+    footer { border-top:1px solid var(--line); padding:24px 0 36px; color:var(--muted); }
+    @media (max-width:780px) { .grid { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <header><div class="shell"><nav><a href="https://xhuiz.github.io/CodexFocus-Windows/">Codex Focus Windows</a><span>使用场景</span></nav></div></header>
+  <main class="shell">
+    <h1>Codex 长任务等待时自动切到抖音</h1>
+    <p class="lead">这个使用场景面向经常让 Codex Desktop 执行长任务的 Windows 用户。Codex Focus Windows 会在 Codex 工作时自动切到抖音 Windows 客户端；当 Codex 完成、失败、中断或等待权限确认时，暂停抖音并切回 Codex。</p>
+
+    <section>
+      <h2>典型场景</h2>
+      <div class="grid">
+        <article class="card"><h3>等待长任务</h3><p>让 Codex 处理构建、重构、分析或多文件修改时，临时切到抖音，不需要手动找窗口。</p></article>
+        <article class="card"><h3>不错过确认</h3><p>Codex 等待权限确认或需要用户输入时，工具暂停抖音并切回 Codex，减少漏看确认的情况。</p></article>
+        <article class="card"><h3>减少手动切换</h3><p>把“Codex → 抖音 → Codex”的窗口切换自动化，适合重复等待的 AI 编程工作流。</p></article>
+      </div>
+    </section>
+
+    <section>
+      <h2>工作流</h2>
+      <div class="flow">
+        <ol>
+          <li>打开 Codex Desktop 和抖音 Windows 客户端。</li>
+          <li>启动 Codex Focus Windows，并保持监听开启。</li>
+          <li>Codex 开始任务后，工具自动切到抖音并继续播放。</li>
+          <li>Codex 完成、失败、中断或等待权限确认时，工具暂停抖音并切回 Codex。</li>
+          <li>查看结果或处理确认请求后，继续下一轮 Codex 任务。</li>
+        </ol>
+      </div>
+    </section>
+
+    <section>
+      <h2>适合和不适合</h2>
+      <div class="grid">
+        <article class="card"><h3>适合</h3><p>Windows、Codex Desktop、抖音 Windows 客户端、经常有几分钟以上的 Codex 等待时间。</p></article>
+        <article class="card"><h3>谨慎使用</h3><p>如果你的 Codex 任务很短，建议把 <code>TaskSwitchDelaySeconds</code> 调到 1 到 3 秒，避免来回切换。</p></article>
+        <article class="card"><h3>暂不保证</h3><p>浏览器版抖音、B 站、YouTube 或其他媒体软件，需要单独适配窗口匹配和播放暂停逻辑。</p></article>
+      </div>
+    </section>
+
+    <section>
+      <h2>相关入口</h2>
+      <ul>
+        <li><a href="https://xhuiz.github.io/CodexFocus-Windows/download.html">下载 Codex Focus Windows</a></li>
+        <li><a href="https://xhuiz.github.io/CodexFocus-Windows/guides/codex-douyin-auto-switch.html">使用指南</a></li>
+        <li><a href="https://xhuiz.github.io/CodexFocus-Windows/troubleshooting.html">故障排查</a></li>
+        <li><a href="https://xhuiz.github.io/CodexFocus-Windows/answers/codex-douyin-auto-switch.html">问答页</a></li>
+        <li><a href="https://github.com/Xhuiz/CodexFocus-Windows">GitHub 仓库</a></li>
+      </ul>
+    </section>
+  </main>
+  <footer><div class="shell">返回 <a href="https://xhuiz.github.io/CodexFocus-Windows/">项目主页</a> · <a href="https://xhuiz.github.io/CodexFocus-Windows/search-monitoring.html">搜索监控</a></div></footer>
+</body>
+</html>
