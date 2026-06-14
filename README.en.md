@@ -1,6 +1,6 @@
 # Codex Focus Windows
 
-[Project Homepage](https://xhuiz.github.io/CodexFocus-Windows/en/) · [Chinese README](README.md) · [Search Q&A](https://xhuiz.github.io/CodexFocus-Windows/answers/codex-douyin-auto-switch.html) · [Download Page](https://xhuiz.github.io/CodexFocus-Windows/download.html) · [Download Release](https://github.com/Xhuiz/CodexFocus-Windows/releases) · [llms.txt](https://xhuiz.github.io/CodexFocus-Windows/llms.txt) · [CodeMeta](codemeta.json) · [Citation](CITATION.cff)
+[Project Homepage](https://xhuiz.github.io/CodexFocus-Windows/en/) · [Chinese README](README.md) · [Search Q&A](https://xhuiz.github.io/CodexFocus-Windows/answers/codex-douyin-auto-switch.html) · [Download Page](https://xhuiz.github.io/CodexFocus-Windows/download.html) · [Support](SUPPORT.md) · [Security](SECURITY.md) · [Contributing](CONTRIBUTING.md) · [Download Release](https://github.com/Xhuiz/CodexFocus-Windows/releases) · [llms.txt](https://xhuiz.github.io/CodexFocus-Windows/llms.txt) · [CodeMeta](codemeta.json) · [Citation](CITATION.cff)
 
 **Codex Focus Windows** is a Windows productivity utility for **Codex Desktop and Douyin**. When Codex Desktop starts working, it automatically switches to the Douyin Windows client and resumes playback. When Codex completes, fails, aborts, or waits for permission approval, it pauses Douyin and switches back to Codex.
 
@@ -77,6 +77,12 @@ src\CodexFocus.Windows\bin\Release\net8.0-windows\CodexFocus.Windows.exe
 dotnet run --project tests\CodexFocus.Tests\CodexFocus.Tests.csproj
 ```
 
+## Support, Security, And Contributions
+
+- Support and bug reports: [SUPPORT.md](SUPPORT.md)
+- Security policy: [SECURITY.md](SECURITY.md)
+- Contribution guide: [CONTRIBUTING.md](CONTRIBUTING.md)
+- Do not paste private Codex prompts, transcripts, credentials, tokens, or personal data in issues.
 ## Scope Notes
 
 The current version primarily targets the Douyin Windows client. Browser-based Douyin, Bilibili, YouTube, or other media apps may need separate adaptation.
