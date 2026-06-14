@@ -11,6 +11,7 @@ Please check these pages first:
 - Download page: https://xhuiz.github.io/CodexFocus-Windows/download.html
 - Usage guide: https://xhuiz.github.io/CodexFocus-Windows/guides/codex-douyin-auto-switch.html
 - Q&A: https://xhuiz.github.io/CodexFocus-Windows/answers/codex-douyin-auto-switch.html
+- Troubleshooting: https://xhuiz.github.io/CodexFocus-Windows/troubleshooting.html
 - Latest release: https://github.com/Xhuiz/CodexFocus-Windows/releases/tag/v0.1.0
 
 ## What To Include
