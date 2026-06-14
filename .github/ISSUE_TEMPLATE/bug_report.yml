@@ -1,0 +1,48 @@
+name: Bug report
+description: Report a problem with Codex Focus Windows
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a Codex Focus Windows issue. Do not paste private Codex prompts, transcripts, credentials, tokens, or personal data.
+  - type: input
+    id: version
+    attributes:
+      label: App version
+      description: Example: v0.1.0
+      placeholder: v0.1.0
+  - type: input
+    id: windows
+    attributes:
+      label: Windows version
+      placeholder: Windows 11 23H2
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What happened?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Reproduction steps
+      description: How can the issue be reproduced?
+      placeholder: |
+        1. Open Codex Desktop
+        2. Open Douyin Windows client
+        3. Start listening
+        4. Start a Codex task
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+  - type: textarea
+    id: logs
+    attributes:
+      label: Recent event log
+      description: Paste only non-sensitive app event log lines.
