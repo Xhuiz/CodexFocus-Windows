@@ -1,0 +1,110 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Release tag, for example v0.1.0"
+        required: true
+        default: "v0.1.0"
+
+permissions:
+  contents: write
+
+jobs:
+  build-release:
+    name: Build Windows release
+    runs-on: windows-latest
+
+    env:
+      APP_NAME: CodexFocus-Windows
+      PROJECT_PATH: src/CodexFocus.Windows/CodexFocus.Windows.csproj
+      TEST_PROJECT_PATH: tests/CodexFocus.Tests/CodexFocus.Tests.csproj
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Resolve release tag
+        shell: pwsh
+        run: |
+          if ("${{ github.event_name }}" -eq "workflow_dispatch") {
+            $tag = "${{ inputs.tag }}"
+          } else {
+            $tag = "${{ github.ref_name }}"
+          }
+
+          if (-not $tag.StartsWith("v")) {
+            throw "Release tag must start with 'v', for example v0.1.0."
+          }
+
+          "RELEASE_TAG=$tag" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+
+      - name: Set up .NET 8
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Restore
+        run: dotnet restore CodexFocus.sln
+
+      - name: Build
+        run: dotnet build CodexFocus.sln -c Release --no-restore
+
+      - name: Run tests
+        run: dotnet run --project $env:TEST_PROJECT_PATH -c Release --no-build
+
+      - name: Publish Windows app
+        run: dotnet publish $env:PROJECT_PATH -c Release -r win-x64 --self-contained false -o publish
+
+      - name: Package release zip
+        shell: pwsh
+        run: |
+          $zip = "$env:APP_NAME-$env:RELEASE_TAG-win-x64.zip"
+          Compress-Archive -Path "publish\*" -DestinationPath $zip -Force
+          "RELEASE_ZIP=$zip" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+
+      - name: Write release notes
+        shell: pwsh
+        run: |
+          @"
+          # Codex 抖音自动切换工具 $env:RELEASE_TAG
+
+          Codex Focus Windows 是一个 Windows 桌面工具，用于在 Codex Desktop 执行任务时自动切到抖音，并在 Codex 完成、失败、中断或等待权限确认时暂停抖音并切回 Codex。
+
+          ## 适合谁
+
+          - 使用 Codex Desktop 跑较长任务的 Windows 用户
+          - 想在 Codex 工作时自动播放抖音、需要处理时自动切回的人
+          - 需要 Codex + 抖音自动切换/自动暂停工具的人
+
+          ## 运行要求
+
+          - Windows
+          - .NET 8 Desktop Runtime
+          - Codex Desktop
+          - 抖音 Windows 客户端
+
+          ## 使用方式
+
+          1. 下载并解压 `$env:RELEASE_ZIP`。
+          2. 打开 Codex Desktop 和抖音 Windows 客户端。
+          3. 启动 Codex Focus Windows。
+          4. 确认界面中能检测到 Codex 和抖音窗口，然后开始监听。
+          "@.Trim() | Set-Content -Path release-notes.md -Encoding utf8
+
+      - name: Create or update GitHub Release
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $title = "Codex 抖音自动切换工具 $env:RELEASE_TAG"
+          if (gh release view $env:RELEASE_TAG --repo $env:GITHUB_REPOSITORY 2>$null) {
+            gh release upload $env:RELEASE_TAG $env:RELEASE_ZIP --repo $env:GITHUB_REPOSITORY --clobber
+            gh release edit $env:RELEASE_TAG --repo $env:GITHUB_REPOSITORY --title $title --notes-file release-notes.md
+          } else {
+            gh release create $env:RELEASE_TAG $env:RELEASE_ZIP --repo $env:GITHUB_REPOSITORY --target $env:GITHUB_SHA --title $title --notes-file release-notes.md
+          }
