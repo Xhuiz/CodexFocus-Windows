@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Codex 抖音自动切换工具下载 - Codex Focus Windows v0.1.0</title>
+  <meta name="description" content="下载 Codex Focus Windows v0.1.0，Windows 上的 Codex 抖音自动切换工具。包含运行环境、zip 下载、解压启动和常见安装问题。">
+  <meta name="keywords" content="Codex 抖音自动切换工具下载,Codex Focus Windows 下载,Codex 自动暂停抖音下载,Codex Douyin auto switch download,Windows Codex 工具下载">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://xhuiz.github.io/CodexFocus-Windows/download.html">
+  <link rel="alternate" hreflang="zh-CN" href="https://xhuiz.github.io/CodexFocus-Windows/download.html">
+  <link rel="alternate" hreflang="en" href="https://xhuiz.github.io/CodexFocus-Windows/en/">
+  <link rel="alternate" type="application/rss+xml" title="Codex Focus Windows Updates" href="https://xhuiz.github.io/CodexFocus-Windows/feed.xml">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Codex 抖音自动切换工具下载 - Codex Focus Windows">
+  <meta property="og:description" content="下载 Windows zip，安装 .NET 8 Desktop Runtime，启动 Codex Focus Windows 自动切换 Codex 和抖音。">
+  <meta property="og:url" content="https://xhuiz.github.io/CodexFocus-Windows/download.html">
+  <meta property="og:image" content="https://xhuiz.github.io/CodexFocus-Windows/assets/codex-focus-og.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Codex Focus Windows",
+    "alternateName": "Codex 抖音自动切换工具",
+    "description": "Codex Focus Windows 是一个 Windows 桌面工具，Codex Desktop 工作时自动切到抖音，任务完成或等待确认时暂停抖音并切回 Codex。",
+    "applicationCategory": "ProductivityApplication",
+    "operatingSystem": "Windows",
+    "softwareVersion": "0.1.0",
+    "downloadUrl": "https://github.com/Xhuiz/CodexFocus-Windows/releases/download/v0.1.0/CodexFocus-Windows-v0.1.0-win-x64.zip",
+    "installUrl": "https://xhuiz.github.io/CodexFocus-Windows/download.html",
+    "url": "https://xhuiz.github.io/CodexFocus-Windows/",
+    "codeRepository": "https://github.com/Xhuiz/CodexFocus-Windows",
+    "releaseNotes": "https://github.com/Xhuiz/CodexFocus-Windows/releases/tag/v0.1.0",
+    "programmingLanguage": ["C#", ".NET", "WPF"],
+    "author": {"@type": "Person", "name": "Xhuiz", "url": "https://github.com/Xhuiz"}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "如何下载和启动 Codex Focus Windows",
+    "description": "下载 Codex 抖音自动切换工具并在 Windows 上启动。",
+    "totalTime": "PT5M",
+    "tool": [
+      {"@type": "HowToTool", "name": "Windows"},
+      {"@type": "HowToTool", "name": ".NET 8 Desktop Runtime"},
+      {"@type": "HowToTool", "name": "Codex Desktop"},
+      {"@type": "HowToTool", "name": "抖音 Windows 客户端"}
+    ],
+    "step": [
+      {"@type": "HowToStep", "name": "安装 .NET 8 Desktop Runtime", "text": "如果系统没有 .NET 8 Desktop Runtime，先从 Microsoft 官方网站安装。"},
+      {"@type": "HowToStep", "name": "下载 Windows zip", "text": "从 GitHub Release 下载 CodexFocus-Windows-v0.1.0-win-x64.zip。"},
+      {"@type": "HowToStep", "name": "解压并启动", "text": "解压 zip 后运行 CodexFocus.Windows.exe。"},
+      {"@type": "HowToStep", "name": "打开 Codex 和抖音", "text": "同时打开 Codex Desktop 和抖音 Windows 客户端，确认工具能检测到两个窗口。"},
+      {"@type": "HowToStep", "name": "开始监听", "text": "保持启动后自动监听开启，或手动点击开始监听。"}
+    ]
+  }
+  </script>
+  <style>
+    :root { --bg:#f6f7f2; --paper:#fff; --ink:#181b20; --muted:#5f6671; --line:#cfd5cc; --accent:#176b5b; --accent2:#c74b2f; --mono:"SFMono-Regular",Consolas,monospace; --sans:"Segoe UI","Microsoft YaHei",Arial,sans-serif; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:var(--sans); background:var(--bg); color:var(--ink); line-height:1.72; }
+    a { color:var(--accent); }
+    .shell { width:min(940px, calc(100% - 32px)); margin:0 auto; }
+    header { border-bottom:1px solid var(--line); background:rgba(246,247,242,.94); position:sticky; top:0; }
+    nav { min-height:64px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+    nav a { text-decoration:none; font-weight:700; }
+    main { padding:42px 0 56px; }
+    h1 { font-size:clamp(32px,5vw,56px); line-height:1.08; margin:0 0 16px; letter-spacing:0; }
+    h2 { margin:34px 0 12px; font-size:26px; letter-spacing:0; }
+    .lead { color:var(--muted); font-size:18px; max-width:760px; }
+    .cta { display:flex; flex-wrap:wrap; gap:12px; margin:24px 0; }
+    .button { min-height:48px; display:inline-flex; align-items:center; justify-content:center; padding:0 16px; border:1px solid var(--ink); border-radius:4px; text-decoration:none; font-weight:700; background:var(--paper); }
+    .button.primary { background:var(--ink); color:#fff; box-shadow:6px 6px 0 var(--accent2); }
+    .info, .steps, .faq { background:var(--paper); border:1px solid var(--line); border-radius:6px; padding:18px; }
+    .steps ol { margin:0; padding-left:22px; }
+    li { margin:8px 0; }
+    code { font-family:var(--mono); background:#eef1eb; padding:2px 5px; border-radius:4px; }
+    dl { display:grid; grid-template-columns:180px 1fr; gap:0; border:1px solid var(--line); background:var(--paper); }
+    dt, dd { margin:0; padding:12px; border-top:1px solid var(--line); }
+    dt:first-of-type, dd:first-of-type { border-top:0; }
+    dt { color:var(--muted); background:#eef1eb; }
+    footer { border-top:1px solid var(--line); padding:24px 0 36px; color:var(--muted); }
+    @media (max-width:620px) { dl { grid-template-columns:1fr; } dd { border-top:0; } .button { width:100%; } }
+  </style>
+</head>
+<body>
+  <header><div class="shell"><nav><a href="https://xhuiz.github.io/CodexFocus-Windows/">Codex Focus Windows</a><span>下载 v0.1.0</span></nav></div></header>
+  <main class="shell">
+    <h1>Codex 抖音自动切换工具下载</h1>
+    <p class="lead">下载 Codex Focus Windows v0.1.0。它是 Windows 上的 Codex 抖音自动切换工具：Codex Desktop 工作时自动切到抖音，任务完成、失败、中断或等待权限确认时暂停抖音并切回 Codex。</p>
+    <div class="cta">
+      <a class="button primary" href="https://github.com/Xhuiz/CodexFocus-Windows/releases/download/v0.1.0/CodexFocus-Windows-v0.1.0-win-x64.zip">下载 Windows zip</a>
+      <a class="button" href="https://github.com/Xhuiz/CodexFocus-Windows/releases/tag/v0.1.0">查看 Release</a>
+      <a class="button" href="https://github.com/Xhuiz/CodexFocus-Windows">查看源码</a>
+    </div>
+
+    <section>
+      <h2>版本信息</h2>
+      <dl>
+        <dt>版本</dt><dd>v0.1.0</dd>
+        <dt>文件名</dt><dd><code>CodexFocus-Windows-v0.1.0-win-x64.zip</code></dd>
+        <dt>系统</dt><dd>Windows</dd>
+        <dt>运行环境</dt><dd>.NET 8 Desktop Runtime</dd>
+        <dt>源码仓库</dt><dd><a href="https://github.com/Xhuiz/CodexFocus-Windows">github.com/Xhuiz/CodexFocus-Windows</a></dd>
+      </dl>
+    </section>
+
+    <section>
+      <h2>下载和启动步骤</h2>
+      <div class="steps">
+        <ol>
+          <li>安装 <a href="https://dotnet.microsoft.com/download/dotnet/8.0">.NET 8 Desktop Runtime</a>。</li>
+          <li>从 GitHub Release 下载 <code>CodexFocus-Windows-v0.1.0-win-x64.zip</code>。</li>
+          <li>解压 zip，运行 <code>CodexFocus.Windows.exe</code>。</li>
+          <li>打开 Codex Desktop 和抖音 Windows 客户端。</li>
+          <li>确认工具能检测到两个窗口，保持自动监听开启或手动开始监听。</li>
+        </ol>
+      </div>
+    </section>
+
+    <section>
+      <h2>适合谁下载</h2>
+      <div class="info">
+        <p>如果你经常让 Codex Desktop 执行较长任务，又容易在等待期间错过任务完成或权限确认，这个工具适合尝试。它只读取本机 Codex transcript 判断状态，不上传数据，也不自动操作 Codex 输入。</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>相关页面</h2>
+      <ul>
+        <li><a href="https://xhuiz.github.io/CodexFocus-Windows/guides/codex-douyin-auto-switch.html">使用指南</a></li>
+        <li><a href="https://xhuiz.github.io/CodexFocus-Windows/answers/codex-douyin-auto-switch.html">Codex 抖音自动切换问答</a></li>
+        <li><a href="https://xhuiz.github.io/CodexFocus-Windows/llms.txt">llms.txt</a></li>
+        <li><a href="https://xhuiz.github.io/CodexFocus-Windows/codemeta.json">CodeMeta JSON</a></li>
+      </ul>
+    </section>
+  </main>
+  <footer><div class="shell">返回 <a href="https://xhuiz.github.io/CodexFocus-Windows/">项目主页</a> · <a href="https://xhuiz.github.io/CodexFocus-Windows/search-monitoring.html">搜索监控</a></div></footer>
+</body>
+</html>
