@@ -10,6 +10,7 @@ Codex Focus Windows is a Windows productivity utility for Codex Desktop and Douy
 - GitHub repository: https://github.com/Xhuiz/CodexFocus-Windows
 - English README: https://github.com/Xhuiz/CodexFocus-Windows/blob/main/README.en.md
 - English homepage: https://xhuiz.github.io/CodexFocus-Windows/en/
+- Download page: https://xhuiz.github.io/CodexFocus-Windows/download.html
 - Latest release: https://github.com/Xhuiz/CodexFocus-Windows/releases/tag/v0.1.0
 - Windows download: https://github.com/Xhuiz/CodexFocus-Windows/releases/download/v0.1.0/CodexFocus-Windows-v0.1.0-win-x64.zip
 - Full LLM summary: https://xhuiz.github.io/CodexFocus-Windows/llms-full.txt
@@ -35,6 +36,7 @@ Codex Focus Windows is a Windows productivity utility for Codex Desktop and Douy
 - Codex 执行任务时自动切到抖音
 - 有没有 Codex 自动切换抖音的软件
 - Codex 等待权限确认时自动切回
+- Codex 抖音自动切换工具下载
 - Codex Desktop Douyin auto switch
 - Windows focus tool for AI coding
 
