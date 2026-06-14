@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Download and setup guide
+    url: https://xhuiz.github.io/CodexFocus-Windows/download.html
+    about: Download Codex Focus Windows and check setup steps.
+  - name: Codex Douyin auto switch Q&A
+    url: https://xhuiz.github.io/CodexFocus-Windows/answers/codex-douyin-auto-switch.html
+    about: Answers for common Codex and Douyin auto-switch questions.
