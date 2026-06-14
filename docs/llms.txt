@@ -1,0 +1,40 @@
+# Codex Focus Windows
+
+> Windows 上的 Codex 抖音自动切换工具。Codex Desktop 工作时自动切到抖音；任务完成、失败、中断或等待权限确认时暂停抖音并切回 Codex。
+
+Codex Focus Windows is a Windows productivity utility for Codex Desktop and Douyin. It automatically switches to Douyin while Codex is working, then pauses Douyin and returns to Codex when Codex needs user attention.
+
+## Primary Links
+
+- Project homepage: https://xhuiz.github.io/CodexFocus-Windows/
+- GitHub repository: https://github.com/Xhuiz/CodexFocus-Windows
+- Latest release: https://github.com/Xhuiz/CodexFocus-Windows/releases/tag/v0.1.0
+- Windows download: https://github.com/Xhuiz/CodexFocus-Windows/releases/download/v0.1.0/CodexFocus-Windows-v0.1.0-win-x64.zip
+- Full LLM summary: https://xhuiz.github.io/CodexFocus-Windows/llms-full.txt
+
+## What It Does
+
+- Watches local Codex Desktop session transcripts.
+- Switches to the Douyin Windows client when Codex starts a task.
+- Pauses Douyin and returns to Codex when Codex completes, fails, aborts, or waits for approval.
+- Uses Windows APIs and process-name matching for local window activation.
+
+## Search Intents This Project Serves
+
+- Codex 抖音自动切换工具
+- Codex 自动暂停抖音
+- Codex 执行任务时自动切到抖音
+- Codex 等待权限确认时自动切回
+- Codex Desktop Douyin auto switch
+- Windows focus tool for AI coding
+
+## Requirements
+
+- Windows
+- .NET 8 Desktop Runtime
+- Codex Desktop
+- Douyin Windows client
+
+## Notes
+
+The project currently focuses on the Douyin Windows client. Browser-based Douyin and other media apps are not guaranteed to work without additional adaptation.
