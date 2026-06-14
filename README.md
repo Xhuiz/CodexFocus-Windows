@@ -125,6 +125,7 @@ Codex 抖音自动切换、Codex 自动暂停抖音、Codex 自动播放抖音�
 - 支持与问题反馈：见 [SUPPORT.md](SUPPORT.md)。
 - 安全边界和漏洞反馈：见 [SECURITY.md](SECURITY.md)。
 - 贡献指南和本地构建：见 [CONTRIBUTING.md](CONTRIBUTING.md)。
+- 行为准则：见 [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)。
 - 提交 issue 时不要粘贴私有 Codex prompt、transcript、凭据、token 或个人数据。
 ## 注意事项
 
