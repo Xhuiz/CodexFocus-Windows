@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use Codex Focus Windows, please cite the GitHub repository."
+title: "Codex Focus Windows"
+type: software
+authors:
+  - family-names: "Xhuiz"
+repository-code: "https://github.com/Xhuiz/CodexFocus-Windows"
+url: "https://xhuiz.github.io/CodexFocus-Windows/"
+version: "0.1.0"
+date-released: "2026-06-14"
+abstract: "Codex Focus Windows is a Windows productivity utility for Codex Desktop and Douyin. It switches to Douyin while Codex is working, then pauses Douyin and returns to Codex when Codex completes, fails, aborts, or waits for approval."
+keywords:
+  - Codex
+  - Codex Desktop
+  - Douyin
+  - Windows
+  - WPF
+  - .NET
+  - automation
+  - productivity
+  - AI coding
+  - focus tool
