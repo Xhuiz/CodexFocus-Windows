@@ -1,0 +1,50 @@
+{
+    "@context":  "https://doi.org/10.5063/schema/codemeta-2.0",
+    "@type":  "SoftwareSourceCode",
+    "name":  "Codex Focus Windows",
+    "alternateName":  [
+                          "Codex 抖音自动切换工具",
+                          "Codex Douyin Auto Switch Tool"
+                      ],
+    "description":  "Codex Focus Windows is a Windows utility that switches to Douyin while Codex Desktop is working, then pauses Douyin and returns to Codex when Codex completes, fails, aborts, or waits for approval.",
+    "keywords":  [
+                     "Codex",
+                     "Codex Desktop",
+                     "Douyin",
+                     "Windows",
+                     "WPF",
+                     ".NET 8",
+                     "automation",
+                     "productivity",
+                     "AI coding",
+                     "focus tool",
+                     "Codex 抖音自动切换工具",
+                     "Codex 自动暂停抖音"
+                 ],
+    "codeRepository":  "https://github.com/Xhuiz/CodexFocus-Windows",
+    "url":  "https://xhuiz.github.io/CodexFocus-Windows/",
+    "downloadUrl":  "https://github.com/Xhuiz/CodexFocus-Windows/releases/download/v0.1.0/CodexFocus-Windows-v0.1.0-win-x64.zip",
+    "issueTracker":  "https://github.com/Xhuiz/CodexFocus-Windows/issues",
+    "version":  "0.1.0",
+    "datePublished":  "2026-06-14",
+    "programmingLanguage":  [
+                                "C#",
+                                ".NET",
+                                "WPF"
+                            ],
+    "operatingSystem":  "Windows",
+    "runtimePlatform":  ".NET 8 Desktop Runtime",
+    "applicationCategory":  "ProductivityApplication",
+    "author":  {
+                   "@type":  "Person",
+                   "name":  "Xhuiz",
+                   "url":  "https://github.com/Xhuiz"
+               },
+    "creator":  {
+                    "@type":  "Person",
+                    "name":  "Xhuiz",
+                    "url":  "https://github.com/Xhuiz"
+                },
+    "releaseNotes":  "https://github.com/Xhuiz/CodexFocus-Windows/releases/tag/v0.1.0",
+    "isAccessibleForFree":  true
+}
