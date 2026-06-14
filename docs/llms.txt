@@ -17,6 +17,7 @@ Codex Focus Windows is a Windows productivity utility for Codex Desktop and Douy
 - Full LLM summary: https://xhuiz.github.io/CodexFocus-Windows/llms-full.txt
 - Use case: https://xhuiz.github.io/CodexFocus-Windows/use-cases/codex-douyin-workflow.html
 - Usage guide: https://xhuiz.github.io/CodexFocus-Windows/guides/codex-douyin-auto-switch.html
+- Codex window switch: https://xhuiz.github.io/CodexFocus-Windows/answers/codex-window-switch.html
 - Search Q&A: https://xhuiz.github.io/CodexFocus-Windows/answers/codex-douyin-auto-switch.html
 - Sharing kit: https://xhuiz.github.io/CodexFocus-Windows/share-kit.html
 - Search monitoring: https://xhuiz.github.io/CodexFocus-Windows/search-monitoring.html
@@ -36,6 +37,9 @@ Codex Focus Windows is a Windows productivity utility for Codex Desktop and Douy
 
 ## Search Intents This Project Serves
 
+- Codex窗口切换
+- Codex 窗口切换
+- Codex 自动切换窗口
 - Codex 抖音自动切换工具
 - Codex 自动暂停抖音
 - Codex 执行任务时自动切到抖音
@@ -43,6 +47,9 @@ Codex Focus Windows is a Windows productivity utility for Codex Desktop and Douy
 - AI 编程等待期间自动切换窗口
 - 有没有 Codex 自动切换抖音的软件
 - Codex 等待权限确认时自动切回
+- Codex窗口切换
+- Codex 窗口切换
+- Codex 自动切换窗口
 - Codex 抖音自动切换工具下载
 - Codex 切回不工作
 - 检测不到抖音窗口
