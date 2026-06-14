@@ -6,3 +6,5 @@ Sitemap: https://xhuiz.github.io/CodexFocus-Windows/sitemap.xml
 # Machine-readable project summaries
 # https://xhuiz.github.io/CodexFocus-Windows/llms.txt
 # https://xhuiz.github.io/CodexFocus-Windows/llms-full.txt
+# RSS feed
+# https://xhuiz.github.io/CodexFocus-Windows/feed.xml
