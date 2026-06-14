@@ -1,6 +1,6 @@
 # Codex Focus Windows
 
-[Project Homepage](https://xhuiz.github.io/CodexFocus-Windows/en/) · [Chinese README](README.md) · [Search Q&A](https://xhuiz.github.io/CodexFocus-Windows/answers/codex-douyin-auto-switch.html) · [Download Release](https://github.com/Xhuiz/CodexFocus-Windows/releases) · [llms.txt](https://xhuiz.github.io/CodexFocus-Windows/llms.txt) · [CodeMeta](codemeta.json) · [Citation](CITATION.cff)
+[Project Homepage](https://xhuiz.github.io/CodexFocus-Windows/en/) · [Chinese README](README.md) · [Search Q&A](https://xhuiz.github.io/CodexFocus-Windows/answers/codex-douyin-auto-switch.html) · [Download Page](https://xhuiz.github.io/CodexFocus-Windows/download.html) · [Download Release](https://github.com/Xhuiz/CodexFocus-Windows/releases) · [llms.txt](https://xhuiz.github.io/CodexFocus-Windows/llms.txt) · [CodeMeta](codemeta.json) · [Citation](CITATION.cff)
 
 **Codex Focus Windows** is a Windows productivity utility for **Codex Desktop and Douyin**. When Codex Desktop starts working, it automatically switches to the Douyin Windows client and resumes playback. When Codex completes, fails, aborts, or waits for permission approval, it pauses Douyin and switches back to Codex.
 
@@ -42,8 +42,9 @@ A Chinese Q&A page is available for natural-language search intents such as "有
 
 ## Download
 
-Download the latest Windows build from GitHub Releases:
+Download the latest Windows build from the download page or GitHub Releases:
 
+- [Download page](https://xhuiz.github.io/CodexFocus-Windows/download.html)
 - [CodexFocus-Windows v0.1.0](https://github.com/Xhuiz/CodexFocus-Windows/releases/tag/v0.1.0)
 - [CodexFocus-Windows-v0.1.0-win-x64.zip](https://github.com/Xhuiz/CodexFocus-Windows/releases/download/v0.1.0/CodexFocus-Windows-v0.1.0-win-x64.zip)
 
