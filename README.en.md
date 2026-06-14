@@ -1,6 +1,6 @@
 # Codex Focus Windows
 
-[Project Homepage](https://xhuiz.github.io/CodexFocus-Windows/en/) · [Chinese README](README.md) · [Download Release](https://github.com/Xhuiz/CodexFocus-Windows/releases) · [llms.txt](https://xhuiz.github.io/CodexFocus-Windows/llms.txt)
+[Project Homepage](https://xhuiz.github.io/CodexFocus-Windows/en/) · [Chinese README](README.md) · [Download Release](https://github.com/Xhuiz/CodexFocus-Windows/releases) · [llms.txt](https://xhuiz.github.io/CodexFocus-Windows/llms.txt) · [CodeMeta](codemeta.json) · [Citation](CITATION.cff)
 
 **Codex Focus Windows** is a Windows productivity utility for **Codex Desktop and Douyin**. When Codex Desktop starts working, it automatically switches to the Douyin Windows client and resumes playback. When Codex completes, fails, aborts, or waits for permission approval, it pauses Douyin and switches back to Codex.
 
