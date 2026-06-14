@@ -2,7 +2,7 @@
 
 [![Release](https://img.shields.io/github/v/release/Xhuiz/CodexFocus-Windows?label=release)](https://github.com/Xhuiz/CodexFocus-Windows/releases) [![Build Windows release](https://github.com/Xhuiz/CodexFocus-Windows/actions/workflows/release.yml/badge.svg)](https://github.com/Xhuiz/CodexFocus-Windows/actions/workflows/release.yml)
 
-[下载 Windows Release](https://github.com/Xhuiz/CodexFocus-Windows/releases)
+[项目主页](https://xhuiz.github.io/CodexFocus-Windows/) · [下载 Windows Release](https://github.com/Xhuiz/CodexFocus-Windows/releases)
 
 **Codex Focus Windows** 是一个面向 Windows 的 **Codex 抖音自动切换工具**。当 Codex Desktop 开始执行任务时，它会自动切到抖音 Windows 客户端并继续播放；当 Codex 任务完成、失败、终止或需要权限确认时，它会暂停抖音并切回 Codex。
 
