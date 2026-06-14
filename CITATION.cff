@@ -12,10 +12,16 @@ abstract: "Codex Focus Windows is a Windows productivity utility for Codex Deskt
 keywords:
   - Codex
   - Codex Desktop
+  - OpenAI Codex
   - Douyin
+  - Codex Douyin auto switch
+  - Codex 抖音自动切换工具
   - Windows
+  - Windows automation
+  - desktop automation
+  - Douyin automation
   - WPF
-  - .NET
+  - .NET 8
   - automation
   - productivity
   - AI coding
