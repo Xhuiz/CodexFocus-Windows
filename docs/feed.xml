@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Codex Focus Windows Updates</title>
+    <link>https://xhuiz.github.io/CodexFocus-Windows/</link>
+    <description>Updates for Codex Focus Windows, a Codex Douyin auto switch tool for Windows.</description>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 14 Jun 2026 17:55:57 GMT</lastBuildDate>
+    <atom:link href="https://xhuiz.github.io/CodexFocus-Windows/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Codex Focus Windows v0.1.0 Release</title>
+      <link>https://github.com/Xhuiz/CodexFocus-Windows/releases/tag/v0.1.0</link>
+      <guid>https://github.com/Xhuiz/CodexFocus-Windows/releases/tag/v0.1.0</guid>
+      <pubDate>Sun, 14 Jun 2026 17:55:57 GMT</pubDate>
+      <description>Windows release for Codex Focus Windows, a Codex Desktop and Douyin auto switch utility.</description>
+    </item>
+    <item>
+      <title>Codex Douyin Auto Switch Guide</title>
+      <link>https://xhuiz.github.io/CodexFocus-Windows/guides/codex-douyin-auto-switch.html</link>
+      <guid>https://xhuiz.github.io/CodexFocus-Windows/guides/codex-douyin-auto-switch.html</guid>
+      <pubDate>Sun, 14 Jun 2026 17:55:57 GMT</pubDate>
+      <description>Guide: how to switch to Douyin while Codex Desktop is working and return to Codex when it needs attention.</description>
+    </item>
+    <item>
+      <title>English Landing Page</title>
+      <link>https://xhuiz.github.io/CodexFocus-Windows/en/</link>
+      <guid>https://xhuiz.github.io/CodexFocus-Windows/en/</guid>
+      <pubDate>Sun, 14 Jun 2026 17:55:57 GMT</pubDate>
+      <description>English page for Codex Focus Windows: Codex Douyin auto switch tool for Windows.</description>
+    </item>
+  </channel>
+</rss>
