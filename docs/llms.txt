@@ -15,6 +15,8 @@ Codex Focus Windows is a Windows productivity utility for Codex Desktop and Douy
 - Full LLM summary: https://xhuiz.github.io/CodexFocus-Windows/llms-full.txt
 - Usage guide: https://xhuiz.github.io/CodexFocus-Windows/guides/codex-douyin-auto-switch.html
 - Sharing kit: https://xhuiz.github.io/CodexFocus-Windows/share-kit.html
+- Search monitoring: https://xhuiz.github.io/CodexFocus-Windows/search-monitoring.html
+- RSS feed: https://xhuiz.github.io/CodexFocus-Windows/feed.xml
 
 ## What It Does
 
