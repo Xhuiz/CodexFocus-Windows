@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Codex 执行任务时如何自动切到抖音 - Codex Focus Windows 使用指南</title>
+  <meta name="description" content="用 Codex Focus Windows 在 Windows 上实现 Codex Desktop 工作时自动切到抖音，任务完成或等待权限确认时自动暂停抖音并切回 Codex。">
+  <link rel="canonical" href="https://xhuiz.github.io/CodexFocus-Windows/guides/codex-douyin-auto-switch.html">
+  <link rel="alternate" type="text/plain" title="LLMs.txt" href="https://xhuiz.github.io/CodexFocus-Windows/llms.txt">
+  <style>
+    :root { --bg:#f6f7f2; --paper:#fff; --ink:#181b20; --muted:#5f6671; --line:#cfd5cc; --accent:#176b5b; --accent2:#c74b2f; --mono:"SFMono-Regular",Consolas,monospace; --sans:"Segoe UI","Microsoft YaHei",Arial,sans-serif; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:var(--sans); background:var(--bg); color:var(--ink); line-height:1.7; }
+    a { color:var(--accent); }
+    .shell { width:min(880px, calc(100% - 32px)); margin:0 auto; }
+    header { border-bottom:1px solid var(--line); background:rgba(246,247,242,.94); position:sticky; top:0; }
+    nav { min-height:64px; display:flex; align-items:center; justify-content:space-between; gap:16px; }
+    nav a { text-decoration:none; font-weight:700; }
+    nav span { color:var(--muted); font-size:14px; }
+    main { padding:42px 0 56px; }
+    h1 { font-size:clamp(32px,5vw,56px); line-height:1.08; margin:0 0 18px; letter-spacing:0; }
+    h2 { margin:36px 0 12px; font-size:28px; line-height:1.2; letter-spacing:0; }
+    p { margin:0 0 16px; }
+    .lead { font-size:18px; color:var(--muted); }
+    .panel { background:var(--paper); border:1px solid var(--line); border-radius:6px; padding:20px; margin:24px 0; }
+    .cta { display:flex; flex-wrap:wrap; gap:12px; margin:24px 0; }
+    .button { min-height:46px; display:inline-flex; align-items:center; padding:0 16px; border:1px solid var(--ink); border-radius:4px; text-decoration:none; color:var(--ink); background:#fff; font-weight:700; }
+    .primary { color:#fff; background:var(--ink); box-shadow:6px 6px 0 var(--accent2); }
+    code { font-family:var(--mono); background:#eef1eb; padding:2px 5px; border-radius:4px; }
+    ol, ul { padding-left:22px; }
+    li { margin:8px 0; }
+    footer { border-top:1px solid var(--line); padding:24px 0 36px; color:var(--muted); }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Codex 执行任务时如何自动切到抖音",
+    "description": "使用 Codex Focus Windows 在 Windows 上实现 Codex Desktop 工作时自动切到抖音，任务完成或等待权限确认时自动暂停抖音并切回 Codex。",
+    "tool": [{ "@type": "HowToTool", "name": "Codex Focus Windows" }],
+    "step": [
+      { "@type": "HowToStep", "name": "安装运行环境", "text": "安装 .NET 8 Desktop Runtime，并准备 Codex Desktop 和抖音 Windows 客户端。" },
+      { "@type": "HowToStep", "name": "下载工具", "text": "从 GitHub Release 下载 CodexFocus-Windows-v0.1.0-win-x64.zip。" },
+      { "@type": "HowToStep", "name": "打开两个目标软件", "text": "先打开 Codex Desktop，再打开抖音 Windows 客户端。" },
+      { "@type": "HowToStep", "name": "开始监听", "text": "启动 Codex Focus Windows，确认检测到两个窗口，然后开始监听。" }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="shell"><nav><a href="https://xhuiz.github.io/CodexFocus-Windows/">Codex Focus Windows</a><span>使用指南</span></nav></div>
+  </header>
+  <main class="shell">
+    <h1>Codex 执行任务时如何自动切到抖音</h1>
+    <p class="lead">如果你在 Windows 上使用 Codex Desktop，经常会遇到一个小问题：Codex 正在跑任务时你想临时看抖音，但 Codex 完成或等待权限确认时又容易错过。Codex Focus Windows 就是为这个工作流做的自动切换工具。</p>
+    <div class="cta">
+      <a class="button primary" href="https://github.com/Xhuiz/CodexFocus-Windows/releases/download/v0.1.0/CodexFocus-Windows-v0.1.0-win-x64.zip">下载 Windows 版</a>
+      <a class="button" href="https://github.com/Xhuiz/CodexFocus-Windows">查看 GitHub 仓库</a>
+    </div>
+    <section>
+      <h2>它解决的具体问题</h2>
+      <p>Codex Focus Windows 会读取本机 Codex Desktop 的 session transcript。当 Codex 开始执行任务时，它自动激活抖音 Windows 客户端；当 Codex 完成、失败、中断或等待权限确认时，它暂停抖音并切回 Codex。</p>
+      <div class="panel">一句话：<strong>Codex 工作时切到抖音，需要你处理时切回 Codex。</strong></div>
+    </section>
+    <section>
+      <h2>适合哪些搜索场景</h2>
+      <ul>
+        <li>Codex 抖音自动切换工具</li>
+        <li>Codex 自动暂停抖音</li>
+        <li>Codex 等待权限确认自动切回</li>
+        <li>Codex Desktop Douyin auto switch</li>
+        <li>Windows 上的 AI 编程等待工具</li>
+      </ul>
+    </section>
+    <section>
+      <h2>使用步骤</h2>
+      <ol>
+        <li>安装 <a href="https://dotnet.microsoft.com/download/dotnet/8.0">.NET 8 Desktop Runtime</a>。</li>
+        <li>打开 Codex Desktop。</li>
+        <li>打开抖音 Windows 客户端。</li>
+        <li>下载并解压 <code>CodexFocus-Windows-v0.1.0-win-x64.zip</code>。</li>
+        <li>启动 Codex Focus Windows，确认界面能检测到 Codex 和抖音窗口。</li>
+        <li>保持自动监听开启，之后让 Codex 正常执行任务。</li>
+      </ol>
+    </section>
+    <section>
+      <h2>注意事项</h2>
+      <p>当前版本主要面向抖音 Windows 客户端，不保证浏览器版抖音可用。工具只读取本机 Codex transcript 来判断任务状态，不上传数据，也不会替你操作 Codex 输入内容。</p>
+    </section>
+  </main>
+  <footer><div class="shell">返回 <a href="https://xhuiz.github.io/CodexFocus-Windows/">项目主页</a> · 查看 <a href="https://xhuiz.github.io/CodexFocus-Windows/llms.txt">llms.txt</a></div></footer>
+</body>
+</html>
