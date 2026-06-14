@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Codex 抖音自动切换故障排查 - Codex Focus Windows</title>
+  <meta name="description" content="Codex Focus Windows 故障排查：检测不到 Codex 或抖音窗口、Codex 等待确认没有切回、抖音没有暂停、下载后打不开等问题的排查步骤。">
+  <meta name="keywords" content="Codex 抖音自动切换故障排查,Codex 切回不工作,检测不到抖音窗口,Codex 等待确认没有切回,抖音没有暂停,Codex Focus Windows troubleshooting">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://xhuiz.github.io/CodexFocus-Windows/troubleshooting.html">
+  <link rel="alternate" hreflang="zh-CN" href="https://xhuiz.github.io/CodexFocus-Windows/troubleshooting.html">
+  <link rel="alternate" hreflang="en" href="https://xhuiz.github.io/CodexFocus-Windows/en/">
+  <link rel="alternate" type="application/rss+xml" title="Codex Focus Windows Updates" href="https://xhuiz.github.io/CodexFocus-Windows/feed.xml">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Codex 抖音自动切换故障排查 - Codex Focus Windows">
+  <meta property="og:description" content="排查 Codex Focus Windows 检测窗口、自动切回、抖音暂停、.NET 运行环境和权限确认相关问题。">
+  <meta property="og:url" content="https://xhuiz.github.io/CodexFocus-Windows/troubleshooting.html">
+  <meta property="og:image" content="https://xhuiz.github.io/CodexFocus-Windows/assets/codex-focus-og.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "name": "Codex Focus Windows 故障排查",
+    "description": "Codex 抖音自动切换工具的常见故障排查问题。",
+    "url": "https://xhuiz.github.io/CodexFocus-Windows/troubleshooting.html",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Codex Focus Windows 检测不到抖音窗口怎么办？",
+        "acceptedAnswer": {"@type": "Answer", "text": "先确认抖音 Windows 客户端已经打开，不是浏览器版抖音。然后在设置里检查 DouyinWindowKeywords 是否包含真实进程名，例如 douyin。"}
+      },
+      {
+        "@type": "Question",
+        "name": "Codex 等待权限确认时没有自动切回怎么办？",
+        "acceptedAnswer": {"@type": "Answer", "text": "确认 Codex Desktop 正在写入本机 session transcript，并检查 Codex 窗口进程名是否匹配 CodexWindowKeywords。也可以查看应用最近事件日志，确认是否检测到 waiting approval 状态。"}
+      },
+      {
+        "@type": "Question",
+        "name": "为什么 Codex 开始工作后没有切到抖音？",
+        "acceptedAnswer": {"@type": "Answer", "text": "检查监听是否开启、Codex Desktop 是否正在运行、TaskSwitchDelaySeconds 是否设置过大，以及应用是否能读取 %USERPROFILE%\\.codex\\sessions 下的 transcript。"}
+      },
+      {
+        "@type": "Question",
+        "name": "抖音没有暂停或没有继续播放怎么办？",
+        "acceptedAnswer": {"@type": "Answer", "text": "播放和暂停依赖窗口中心点击。如果抖音客户端布局变化、窗口被遮挡或焦点没有激活，可能需要使用手动测试切换，并调整 ActivationDelayMilliseconds。"}
+      },
+      {
+        "@type": "Question",
+        "name": "下载后打不开 Codex Focus Windows 怎么办？",
+        "acceptedAnswer": {"@type": "Answer", "text": "先安装 .NET 8 Desktop Runtime，再解压 zip 并运行 CodexFocus.Windows.exe。不要直接在压缩包预览里运行程序。"}
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root { --bg:#f6f7f2; --paper:#fff; --ink:#181b20; --muted:#5f6671; --line:#cfd5cc; --accent:#176b5b; --accent2:#c74b2f; --mono:"SFMono-Regular",Consolas,monospace; --sans:"Segoe UI","Microsoft YaHei",Arial,sans-serif; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:var(--sans); background:var(--bg); color:var(--ink); line-height:1.72; }
+    a { color:var(--accent); }
+    .shell { width:min(940px, calc(100% - 32px)); margin:0 auto; }
+    header { border-bottom:1px solid var(--line); background:rgba(246,247,242,.94); position:sticky; top:0; }
+    nav { min-height:64px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+    nav a { text-decoration:none; font-weight:700; }
+    main { padding:42px 0 56px; }
+    h1 { font-size:clamp(32px,5vw,56px); line-height:1.08; margin:0 0 16px; letter-spacing:0; }
+    h2 { margin:34px 0 12px; font-size:26px; letter-spacing:0; }
+    .lead { color:var(--muted); font-size:18px; max-width:780px; }
+    details { background:var(--paper); border:1px solid var(--line); border-radius:6px; margin:12px 0; }
+    summary { cursor:pointer; min-height:58px; display:flex; align-items:center; padding:0 16px; font-weight:700; }
+    details p, .box p { margin:0; padding:0 16px 16px; color:var(--muted); }
+    .box { background:var(--paper); border:1px solid var(--line); border-radius:6px; padding-top:16px; }
+    code { font-family:var(--mono); background:#eef1eb; padding:2px 5px; border-radius:4px; }
+    ul { padding-left:22px; }
+    li { margin:8px 0; }
+    footer { border-top:1px solid var(--line); padding:24px 0 36px; color:var(--muted); }
+  </style>
+</head>
+<body>
+  <header><div class="shell"><nav><a href="https://xhuiz.github.io/CodexFocus-Windows/">Codex Focus Windows</a><span>故障排查</span></nav></div></header>
+  <main class="shell">
+    <h1>Codex 抖音自动切换故障排查</h1>
+    <p class="lead">这里整理 Codex Focus Windows 的常见问题：检测不到 Codex 或抖音窗口、Codex 等待权限确认没有切回、抖音没有暂停、下载后打不开等。适合搜索“Codex 切回不工作”“检测不到抖音窗口”“Codex 等待确认没有切回”的用户。</p>
+
+    <section>
+      <h2>常见故障</h2>
+      <details open>
+        <summary>检测不到抖音窗口怎么办？</summary>
+        <p>先确认打开的是抖音 Windows 客户端，不是浏览器版抖音。然后检查设置里的 <code>DouyinWindowKeywords</code> 是否包含真实进程名，例如 <code>douyin</code>。</p>
+      </details>
+      <details>
+        <summary>Codex 等待权限确认时没有自动切回怎么办？</summary>
+        <p>确认 Codex Desktop 正在写入本机 session transcript，并检查 <code>CodexWindowKeywords</code> 是否匹配真实 Codex 进程名。再查看最近事件日志，确认是否检测到 waiting approval 状态。</p>
+      </details>
+      <details>
+        <summary>Codex 开始工作后没有切到抖音怎么办？</summary>
+        <p>检查监听是否开启、Codex Desktop 是否正在运行、<code>TaskSwitchDelaySeconds</code> 是否设置过大，以及应用是否能读取 <code>%USERPROFILE%\.codex\sessions</code> 下的 transcript。</p>
+      </details>
+      <details>
+        <summary>抖音没有暂停或没有继续播放怎么办？</summary>
+        <p>播放和暂停依赖窗口中心点击。如果抖音客户端布局变化、窗口被遮挡或焦点没有激活，使用手动测试切换，并尝试调整 <code>ActivationDelayMilliseconds</code>。</p>
+      </details>
+      <details>
+        <summary>下载后打不开怎么办？</summary>
+        <p>先安装 .NET 8 Desktop Runtime，再解压 zip 并运行 <code>CodexFocus.Windows.exe</code>。不要直接在压缩包预览里运行程序。</p>
+      </details>
+    </section>
+
+    <section>
+      <h2>排查顺序</h2>
+      <div class="box">
+        <p>推荐顺序：先确认运行环境，再确认窗口检测，再确认 Codex transcript 状态，最后调整切换和激活延迟。这样能区分是运行环境问题、窗口匹配问题，还是状态检测问题。</p>
+      </div>
+      <ul>
+        <li>安装 .NET 8 Desktop Runtime。</li>
+        <li>打开 Codex Desktop 和抖音 Windows 客户端。</li>
+        <li>在 Codex Focus Windows 中确认两个窗口都能检测到。</li>
+        <li>查看最近事件日志，确认是否检测到任务开始、任务完成或等待确认。</li>
+        <li>短任务频繁切换时，把 <code>TaskSwitchDelaySeconds</code> 调到 1 到 3 秒。</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>仍然无法解决</h2>
+      <p>打开 GitHub issue，并提供 Windows 版本、应用版本、窗口检测状态、最近事件日志和复现步骤。不要粘贴私有 Codex prompt、transcript、凭据、token 或个人数据。</p>
+      <ul>
+        <li><a href="https://github.com/Xhuiz/CodexFocus-Windows/issues">提交 issue</a></li>
+        <li><a href="https://github.com/Xhuiz/CodexFocus-Windows/blob/main/SUPPORT.md">支持指南</a></li>
+        <li><a href="https://xhuiz.github.io/CodexFocus-Windows/download.html">下载和安装</a></li>
+        <li><a href="https://xhuiz.github.io/CodexFocus-Windows/answers/codex-douyin-auto-switch.html">问答页</a></li>
+      </ul>
+    </section>
+  </main>
+  <footer><div class="shell">返回 <a href="https://xhuiz.github.io/CodexFocus-Windows/">项目主页</a> · <a href="https://xhuiz.github.io/CodexFocus-Windows/search-monitoring.html">搜索监控</a></div></footer>
+</body>
+</html>
