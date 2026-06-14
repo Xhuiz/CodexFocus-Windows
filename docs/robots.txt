@@ -2,3 +2,7 @@ User-agent: *
 Allow: /
 
 Sitemap: https://xhuiz.github.io/CodexFocus-Windows/sitemap.xml
+
+# Machine-readable project summaries
+# https://xhuiz.github.io/CodexFocus-Windows/llms.txt
+# https://xhuiz.github.io/CodexFocus-Windows/llms-full.txt
