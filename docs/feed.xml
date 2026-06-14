@@ -5,7 +5,7 @@
     <link>https://xhuiz.github.io/CodexFocus-Windows/</link>
     <description>Updates for Codex Focus Windows, a Codex Douyin auto switch tool for Windows.</description>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 14 Jun 2026 10:33:20 G6T</lastBuildDate>
+    <lastBuildDate>Sun, 14 Jun 2026 10:35:35 G6T</lastBuildDate>
     <atom:link href="https://xhuiz.github.io/CodexFocus-Windows/feed.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Codex Focus Windows v0.1.0 Release</title>
@@ -22,6 +22,12 @@
       <description>Guide: how to switch to Douyin while Codex Desktop is working and return to Codex when it needs attention.</description>
     </item>
     <item>
+      <title>Codex Douyin Auto Switch Q&amp;A</title>
+      <link>https://xhuiz.github.io/CodexFocus-Windows/answers/codex-douyin-auto-switch.html</link>
+      <guid>https://xhuiz.github.io/CodexFocus-Windows/answers/codex-douyin-auto-switch.html</guid>
+      <pubDate>Sun, 14 Jun 2026 10:35:35 G6T</pubDate>
+      <description>Q&amp;A page for common searches such as Codex auto switch to Douyin and returning to Codex when approval is needed.</description>
+    </item>    <item>
       <title>English Landing Page</title>
       <link>https://xhuiz.github.io/CodexFocus-Windows/en/</link>
       <guid>https://xhuiz.github.io/CodexFocus-Windows/en/</guid>
