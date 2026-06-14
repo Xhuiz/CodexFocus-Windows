@@ -5,7 +5,7 @@
     <link>https://xhuiz.github.io/CodexFocus-Windows/</link>
     <description>Updates for Codex Focus Windows, a Codex Douyin auto switch tool for Windows.</description>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 14 Jun 2026 15:15:32 G6T</lastBuildDate>
+    <lastBuildDate>Sun, 14 Jun 2026 15:33:05 G6T</lastBuildDate>
     <atom:link href="https://xhuiz.github.io/CodexFocus-Windows/feed.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Codex Focus Windows v0.1.0 Release</title>
@@ -64,5 +64,11 @@
       <guid>https://xhuiz.github.io/CodexFocus-Windows/answers/codex-window-switch.html</guid>
       <pubDate>Sun, 14 Jun 2026 15:15:32 G6T</pubDate>
       <description>Answer page for Codex窗口切换, Codex 窗口切换, and Codex 自动切换窗口 search intents.</description>
+    </item>      <item>
+      <title>Codex Douyin Window Switch Windows Tool</title>
+      <link>https://xhuiz.github.io/CodexFocus-Windows/answers/codex-douyin-window-switch-windows.html</link>
+      <guid>https://xhuiz.github.io/CodexFocus-Windows/answers/codex-douyin-window-switch-windows.html</guid>
+      <pubDate>Sun, 14 Jun 2026 15:33:05 G6T</pubDate>
+      <description>Exact answer page for Codex抖音窗口切换Windows版工具 and related Doubao search intent.</description>
     </item>  </channel>
 </rss>
